@@ -1,0 +1,13 @@
+name: 'More Help Page Test'
+type: module
+description: 'Module to test the help page.'
+package: Testing
+# version: VERSION
+# core: 8.x
+hidden: true
+
+# Information added by Drupal.org packaging script on 2019-03-20
+version: '8.6.13'
+core: '8.x'
+project: 'drupal'
+datestamp: 1553100246

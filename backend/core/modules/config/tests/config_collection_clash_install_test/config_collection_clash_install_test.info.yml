@@ -1,0 +1,15 @@
+# This should contain a copy of the configuration from the
+# config_collection_install_test module.
+name: 'Config collection clash test module'
+type: module
+package: Testing
+# version: VERSION
+# core: 8.x
+dependencies:
+  - drupal:config_collection_install_test
+
+# Information added by Drupal.org packaging script on 2019-03-20
+version: '8.6.13'
+core: '8.x'
+project: 'drupal'
+datestamp: 1553100246
