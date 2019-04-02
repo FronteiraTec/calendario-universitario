@@ -1,48 +1,52 @@
-# Drupal with PostgreSQL
-#
-# Access via "http://localhost:8080"
-#   (or "http://$(docker-machine ip):8080" if using docker-machine)
-#
-# During initial Drupal setup,
-# Database type: PostgreSQL
-# Database name: postgres
-# Database username: postgres
-# Database password: example
-# ADVANCED OPTIONS; Database host: postgres
-
-version: '3.1'
+version: '3.7'
 
 services:
 
-  drupal:
-    image: drupal:8-apache
+  php:
+    container_name: uffs-calendar-php
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./backend/:/var/www
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+
+
+  web:
+    container_name: uffs-calendar-web
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./backend:/var/www
     ports:
       - 8080:80
-    volumes:
-      - /var/www/html/modules:/backend/modules
-      - /var/www/html/profiles:/backend/profiles
-      - /var/www/html/themes:/backend/themes
-      # this takes advantage of the feature in Docker that a new anonymous
-      # volume (which is what we're creating here) will be initialized with the
-      # existing content of the image at the same location
-      - /var/www/html/sites:/backend/sites
-    restart: always
 
-  postgres:
-    image: postgres:10
+  database:
+    container_name: uffs-calendar-database
+    image: mysql:5.6
+    volumes:
+      - dbdata:/var/lib/mysql
     environment:
-      POSTGRES_PASSWORD: postgres
-    restart: always
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+        - "33061:3306"
 
   node:
-    image: "node:8"
-    user: "node"
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - ./frontend:/home/node/app
+    container_name: uffs-calendar-node
+    build:
+      context: .
+      dockerfile: "node.dockerfile"
     ports:
       - "3000"
-    command: "npm start"
     restart: always
+
+volumes:
+  dbdata:
