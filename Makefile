@@ -5,10 +5,7 @@ install:
 	docker-compose run uffs-calendar-php php artisan key:generate
 
 run:
-	docker-compose up -d
-
-stop:
-	docker-compose down
+	docker-compose up
 
 enter-php:
 	docker exec -it uffs-calendar-php bash
