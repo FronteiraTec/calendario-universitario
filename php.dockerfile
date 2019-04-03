@@ -14,11 +14,9 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
-    zip \
     jpegoptim optipng pngquant gifsicle \
     vim \
     unzip \
-    git \
     curl
 
 # Clear cache
@@ -41,12 +39,6 @@ COPY ./backend /var/www
 
 # Copy existing application directory permissions
 COPY --chown=www:www ./backend /var/www
-
-RUN composer install
-
-COPY ./backend/.env.example /var/www/.env
-
-RUN php artisan key:generate
 
 # Change current user to www
 USER www
