@@ -42,6 +42,12 @@ COPY ./backend /var/www
 # Copy existing application directory permissions
 COPY --chown=www:www ./backend /var/www
 
+RUN composer install
+
+COPY ./backend/.env.example /var/www/.env
+
+RUN php artisan key:generate
+
 # Change current user to www
 USER www
 
