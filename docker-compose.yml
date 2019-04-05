@@ -8,11 +8,14 @@ services:
       context: .
       dockerfile: php.dockerfile
     working_dir: /var/www
+    links:
+      - uffs-calendar-database
     volumes:
       - ./backend/:/var/www
     environment:
       - "DB_PORT=3306"
-      - "DB_HOST=database"
+      - "DB_HOST=uffs-calendar-database"
+      - "DB_PASSWORD=secret"
 
 
   uffs-calendar-web:
@@ -28,7 +31,7 @@ services:
 
   uffs-calendar-database:
     container_name: uffs-calendar-database
-    image: mysql:5.6
+    image: mysql:5.7
     volumes:
       - dbdata:/var/lib/mysql
     environment:
