@@ -1,12 +1,7 @@
-@extends('layouts.app', ['title' => __('meal Management')])
+@extends('layouts.app', ['title' => 'Gerenciar Cardápios'])
 
 @section('content')
-    <div class="header bg-gradient-primary pb-7 pt-5 pt-md-7">
-        <div class="container-fluid">
-            <h1 class="display-2 text-white">Cardápio</h1>
-            <p class="text-white mt-0 mb-5">Refeições do RU</p>
-        </div>
-    </div>
+    @include('layouts.headers.title-header', ['title' => 'Cardápios']) 
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -15,7 +10,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Cardápios</h3>
+                                <h3 class="mb-0">Lista de Cardápios</h3>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="{{ route('meal.create') }}" class="btn btn-sm btn-primary">Adicionar cardápio</a>
@@ -42,6 +37,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
                                     <th scope="col"></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,6 +46,28 @@
                                         <td>{{ $meal->day->format('d/m/Y') }}</td>
                                         <td>{{ $meal->name }}</td>
                                         <td>{{ $meal->description }}</td>
+                                        <td class="text-right">
+                                            <div class="dropdown">
+                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                    <a class="dropdown-item" href="{{ route('meal.show', $meal) }}">Visualizar</a>
+                                                    <a class="dropdown-item" href="{{ route('meal.edit', $meal) }}">Editar</a>
+                                                    <form action="{{ route('meal.destroy', $meal) }}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        
+                                                        <button type="button" class="dropdown-item"
+                                                            onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''"
+                                                            style="cursor: pointer"
+                                                        >
+                                                            Remover
+                                                        </button>
+                                                    </form>    
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

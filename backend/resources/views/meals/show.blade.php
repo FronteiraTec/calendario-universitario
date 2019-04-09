@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => __('Gerenciamento de Cardápio')])
+@extends('layouts.app', ['title' => 'Gerenciamento de Cardápio'])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => __('Editar cardápio')])   
+    @include('layouts.headers.title-header', ['title' => 'Visualizar cardápio'])   
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,7 +10,7 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Gerenciamento de Cardápio') }}</h3>
+                                <h3 class="mb-0">Gerenciamento de Cardápio</h3>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="{{ route('meal.index') }}" class="btn btn-sm btn-primary">Voltar para lista</a>
@@ -22,7 +22,7 @@
                         <div class="pl-lg-4">
                             <div class="form-group{{ $errors->has('day') ? ' has-danger' : '' }}">
                                 <label class="form-control-label" for="input-day">Data</label>
-                                <input disabled type="date" name="day" id="input-day" class="form-control form-control-alternative{{ $errors->has('day') ? ' is-invalid' : '' }}" placeholder="Data" value="{{ old('day', $meal->day) }}" required autofocus>
+                                <input disabled type="date" name="day" id="input-day" class="form-control form-control-alternative{{ $errors->has('day') ? ' is-invalid' : '' }}" placeholder="Data" value="{{ $meal->day->format('Y-m-d') }}" required autofocus>
                             </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
