@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Edit User')])   
+    @include('layouts.headers.title-header', ['title' => __('Edit User')])   
 
     <div class="container-fluid mt--7">
         <div class="row">

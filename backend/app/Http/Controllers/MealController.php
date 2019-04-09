@@ -14,7 +14,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        //
+        $meals = Meal::orderBy("day")->get();
+        return view("meals.index", compact("meals"));
     }
 
     /**
@@ -24,7 +25,7 @@ class MealController extends Controller
      */
     public function create()
     {
-        //
+        return view("meals.create");
     }
 
     /**
@@ -35,7 +36,12 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $meal = Meal::create([
+            "name" => $request->name,
+            "day" => $request->day,
+            "description" => $request->description
+        ]);
+        return redirect()->route("meal.show", ["id" => $meal->id]);
     }
 
     /**
@@ -46,7 +52,7 @@ class MealController extends Controller
      */
     public function show(Meal $meal)
     {
-        //
+        return view("meals.show", ["meal" => $meal]);
     }
 
     /**
@@ -57,7 +63,7 @@ class MealController extends Controller
      */
     public function edit(Meal $meal)
     {
-        //
+        return view("meals.edit", ["meal" => $meal]);
     }
 
     /**
@@ -69,7 +75,12 @@ class MealController extends Controller
      */
     public function update(Request $request, Meal $meal)
     {
-        //
+        $meal->update([
+            "name" => $request->name,
+            "day" => $request->day,
+            "description" => $request->description
+        ]);
+        return redirect()->route("meal.show", ["id" => $meal->id]);
     }
 
     /**
