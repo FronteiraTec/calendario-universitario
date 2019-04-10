@@ -1,0 +1,26 @@
+.MealItem {
+    align-items: center;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    background-color: #1976d2;
+    display: flex;
+    justify-content: justify;
+    margin: .8em 0;
+}
+
+.MealItem__day {
+    padding: .5rem .8rem;
+    text-align: center;
+}
+
+.MealItem__week-day {
+    font-size: .8em;
+}
+
+.MealItem__day-number {
+    font-size: 1.7em;
+}
+
+.MealItem__description {
+    padding: .5rem .8rem;
+}
