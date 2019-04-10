@@ -15,7 +15,6 @@ class CreateMealsTable extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("name");
             $table->date("day");
             $table->text("description")->nullable();
             $table->timestamps();

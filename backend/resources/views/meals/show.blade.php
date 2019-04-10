@@ -25,11 +25,6 @@
                                 <input disabled type="date" name="day" id="input-day" class="form-control form-control-alternative{{ $errors->has('day') ? ' is-invalid' : '' }}" placeholder="Data" value="{{ $meal->day->format('Y-m-d') }}" required autofocus>
                             </div>
 
-                            <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-name">Nome</label>
-                                <input disabled type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Nome" value="{{ old('name', $meal->name) }}" required autofocus>
-                            </div>
-
                             <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                 <label class="form-control-label" for="input-description">Descrição</label>
                                 <textarea disabled type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Descrição" required

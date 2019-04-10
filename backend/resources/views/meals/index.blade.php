@@ -34,17 +34,14 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Dia</th>
-                                    <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
                                     <th scope="col"></th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($meals as $meal)
                                     <tr>
                                         <td>{{ $meal->day->format('d/m/Y') }}</td>
-                                        <td>{{ $meal->name }}</td>
                                         <td>{{ $meal->description }}</td>
                                         <td class="text-right">
                                             <div class="dropdown">

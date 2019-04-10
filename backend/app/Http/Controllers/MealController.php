@@ -37,7 +37,6 @@ class MealController extends Controller
     public function store(Request $request)
     {
         $meal = Meal::create([
-            "name" => $request->name,
             "day" => $request->day,
             "description" => $request->description
         ]);
@@ -76,7 +75,6 @@ class MealController extends Controller
     public function update(Request $request, Meal $meal)
     {
         $meal->update([
-            "name" => $request->name,
             "day" => $request->day,
             "description" => $request->description
         ]);
@@ -91,6 +89,7 @@ class MealController extends Controller
      */
     public function destroy(Meal $meal)
     {
-        //
+        $meal->delete();
+        return redirect()->route("meal.index");
     }
 }
