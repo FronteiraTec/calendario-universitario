@@ -44,6 +44,9 @@ services:
 
   uffs-calendar-node:
     container_name: uffs-calendar-node
+    volumes:
+      - ./frontend:/usr/src/app
+    command: npm start
     environment:
       env_file: .env
       NODE_ENV: development
