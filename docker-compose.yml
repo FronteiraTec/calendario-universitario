@@ -20,6 +20,8 @@ services:
 
   uffs-calendar-web:
     container_name: uffs-calendar-web
+    depends_on:
+      - uffs-calendar-php
     build:
       context: ./
       dockerfile: web.dockerfile
