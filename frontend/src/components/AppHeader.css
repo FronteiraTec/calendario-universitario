@@ -2,7 +2,7 @@
   box-shadow: 0 2px 4px .5px rgba(0, 0, 0, .3);
   padding: .2rem .8rem;
   display: flex;
-  line-height: 2.5rem;
+  line-height: 3rem;
 }
 
 .AppHeader__menu-button {
@@ -10,12 +10,12 @@
   border: 0;
   background-color: transparent;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .AppHeader__app-name {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0;
-  padding: 0 .6em;
+  padding: 0 .5em;
 }
