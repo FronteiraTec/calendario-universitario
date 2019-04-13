@@ -1,6 +1,8 @@
 import React from 'react'
 import "./MealItem.css"
 
+import sanitalize from 'sanitize-html'
+
 const getWeekDay = dateProp => {
   const date = new Date(dateProp)
   switch (date.getDay()) {
@@ -26,6 +28,10 @@ const getDateNumber = dateProp => {
   return date.getDay()
 }
 
+const formatDescription = description => {
+  return sanitalize(description.replace(/\n/g, "<br>"))
+}
+
 const MealItem = (props) => {
   return (
     <div className="MealItem">
@@ -37,8 +43,10 @@ const MealItem = (props) => {
           { getDateNumber(props.day) }
         </div>
       </div>
-      <div className="MealItem__description">
-        { props.description }
+      <div className="MealItem__description"
+        dangerouslySetInnerHTML={{
+          __html: sanitalize(formatDescription(props.description))
+        }}>
       </div>
     </div>
   )
