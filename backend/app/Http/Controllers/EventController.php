@@ -18,6 +18,12 @@ class EventController extends Controller
         return view("events.index", compact("events"));
     }
 
+    public function indexApi()
+    {
+        $events = Event::orderBy("day")->get();
+        return response()->json($events);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -55,6 +61,11 @@ class EventController extends Controller
     public function show(Event $event)
     {
         return view("events.show", ["event" => $event]);
+    }
+
+    public function showApi(Event $event)
+    {
+        return response()->json($event);
     }
 
     /**
