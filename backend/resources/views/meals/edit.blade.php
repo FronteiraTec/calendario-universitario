@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => 'Editar Cardápio'])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => 'Cardápios'])   
+    @include('layouts.headers.title-header', ['title' => 'Cardápios'])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -37,7 +37,7 @@
 
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">Descrição</label>
-                                    <textarea type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Descrição" required
+                                    <textarea rows="10" type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Descrição" required
                                     >{{ old('description', $meal->description) }}</textarea>
 
                                     @if ($errors->has('description'))
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

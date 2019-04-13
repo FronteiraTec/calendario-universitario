@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('meal Management')])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => __('Cardápios')])   
+    @include('layouts.headers.title-header', ['title' => __('Cardápios')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <form method="post" action="{{ route('meal.store') }}" autocomplete="off">
                             @csrf
-                            
+
                             <!-- <h6 class="heading-small text-muted mb-4">Informações</h6> -->
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('day') ? ' has-danger' : '' }}">
@@ -33,10 +33,10 @@
                                         </span>
                                     @endif
                                 </div>
-                                
+
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">Descrição</label>
-                                    <textarea type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Descrição" value="{{ old('description') }}" required
+                                    <textarea rows="10" type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Descrição" value="{{ old('description') }}" required
                                     ></textarea>
 
                                     @if ($errors->has('description'))
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection
