@@ -5,7 +5,7 @@ FROM node
 RUN mkdir /usr/src/app
 #copy all files from current directory to docker
 
-COPY ./frontend /usr/src/app
+#COPY ./frontend /usr/src/app
 
 WORKDIR /usr/src/app
 
@@ -13,6 +13,6 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-RUN yarn
+# RUN yarn
 
-CMD ["npm", "start"]
+# CMD ["npm", "start"]

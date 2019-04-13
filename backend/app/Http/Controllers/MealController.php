@@ -18,6 +18,12 @@ class MealController extends Controller
         return view("meals.index", compact("meals"));
     }
 
+    public function indexApi()
+    {
+        $meals = Meal::orderBy("day")->get();
+        return response()->json($meals);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -52,6 +58,11 @@ class MealController extends Controller
     public function show(Meal $meal)
     {
         return view("meals.show", ["meal" => $meal]);
+    }
+
+    public function showApi(Meal $meal)
+    {
+        return response()->json($meal);
     }
 
     /**
