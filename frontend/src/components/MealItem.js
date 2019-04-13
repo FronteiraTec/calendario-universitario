@@ -20,6 +20,8 @@ const getWeekDay = dateProp => {
       return 'Sex'
     case 6:
       return 'Sab'
+    default:
+      return 'NaN'
   }
 }
 
