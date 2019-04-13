@@ -6,8 +6,10 @@ class AppHeader extends Component {
   render () {
     return (
       <header className="AppHeader">
-        <i className="fa fa-bars"></i>
-        Abril
+        <button class="AppHeader__menu-button">
+          <i className="fa fa-bars"></i>
+        </button>
+        <h1 class="AppHeader__app-name">Calendário UFFS</h1>
       </header>
     )
   }
