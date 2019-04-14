@@ -9,8 +9,12 @@ const EventList = ({events}) => {
       { events.map((item, index) => (
         <li key={index}>
           <EventItem
-            scheduledDay={item.scheduledDay}
+            type={item.type}
+            name={item.name}
             description={item.description}
+            place={item.place}
+            scheduledDay={item.scheduledDay}
+            scheduledTime={item.scheduledTime}
           />
         </li>
       )) }

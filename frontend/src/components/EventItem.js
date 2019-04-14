@@ -3,31 +3,30 @@ import "./EventItem.css"
 
 import sanitalize from 'sanitize-html'
 
-const getWeekDay = dateProp => {
+const getWeekDay = (dateProp, complete = false) => {
   const date = new Date(dateProp)
-  switch (date.getDay()) {
-    case 0:
-      return 'Dom'
-    case 1:
-      return 'Seg'
-    case 2:
-      return 'Ter'
-    case 3:
-      return 'Qua'
-    case 4:
-      return 'Qui'
-    case 5:
-      return 'Sex'
-    case 6:
-      return 'Sab'
-    default:
-      return 'NaN'
-  }
+  const weekNumberDay = date.getDay()
+  const daysConfig = [
+    {short: 'Dom', long: 'Domingo'},
+    {short: 'Seg', long: 'Segunda'},
+    {short: 'Ter', long: 'Terça'},
+    {short: 'Qua', long: 'Quarta'},
+    {short: 'Qui', long: 'Quinta'},
+    {short: 'Sex', long: 'Sexta'},
+    {short: 'Sab', long: 'Sabádo'},
+  ]
+  console.log(date)
+  return daysConfig[weekNumberDay][complete ? 'long' : 'short']
 }
 
 const getDateNumber = dateProp => {
   const date = new Date(dateProp)
   return date.getDay()
+}
+
+const formatNameByTime = (name, scheduledDay, type) => {
+  if (type == "event") return name
+  return `Cardário RU de ${getWeekDay(scheduledDay, true)}`
 }
 
 const formatDescription = description => {
@@ -45,11 +44,14 @@ const EventItem = (props) => {
           { getDateNumber(props.scheduledDay) }
         </div>
       </div>
-      <div className="EventItem__description"
+      <div className="EventItem__description">
+        { formatNameByTime(props.name, props.scheduledDay, props.type) }
+      </div>
+      {/* <div className="EventItem__description"
         dangerouslySetInnerHTML={{
           __html: sanitalize(formatDescription(props.description))
         }}>
-      </div>
+      </div> */}
     </div>
   )
 }
