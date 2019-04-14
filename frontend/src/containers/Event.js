@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import { fetchMeals } from '../actions/meal'
+import { fetchEvents } from '../actions/event'
 
-import MealList from '../components/MealList'
+import EventList from '../components/EventList'
 
-class MealListContainer extends Component {
+class EventListContainer extends Component {
   componentDidMount () {
     const { dispatch } = this.props
-    fetchMeals()(dispatch)
+    fetchEvents()(dispatch)
   }
 
   render () {
     return (
-      <MealList meals={this.props.meals} />
+      <EventList events={this.props.events} />
     )
   }
 }
 
 const mapStateToProps = state => {
-  return {meals: state.meal.meals}
+  return {events: state.event.events}
 }
 
 const container = connect(
   mapStateToProps
-)(MealListContainer)
+)(EventListContainer)
 
 export default container

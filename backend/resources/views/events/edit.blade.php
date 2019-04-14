@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => 'Adicionar Cardápio'])
+@extends('layouts.app', ['title' => 'Editar Evento'])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => 'Cardápios'])
+    @include('layouts.headers.title-header', ['title' => 'Eventos'])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,19 +10,21 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Adicionar Cardápio</h3>
+                                <h3 class="mb-0">Editar Evento</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('meal.index') }}" class="btn btn-sm btn-primary">Voltar para a lista</a>
+                                <a href="{{ route('event.show', ['id' => $event->id]) }}" class="btn btn-sm btn-primary">Voltar para visualização</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('meal.store') }}" autocomplete="off">
+                        <form method="post" action="{{ route('event.update', $event) }}" autocomplete="off">
                             @csrf
-
-                            <!-- <h6 class="heading-small text-muted mb-4">Informações</h6> -->
-                            @include('meals.form', ['action' => 'create'])
+                            @method('put')
+                            @include('events.form', [
+                                'action' => 'edit',
+                                'event' => $event
+                            ])
                         </form>
                     </div>
                 </div>

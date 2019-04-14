@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => 'Gerenciar Cardápios'])
+@extends('layouts.app', ['title' => 'Gerenciar Eventos'])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => 'Cardápios'])
+    @include('layouts.headers.title-header', ['title' => 'Eventos'])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,10 +10,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Lista de Cardápios</h3>
+                                <h3 class="mb-0">Lista de Eventos</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('meal.create') }}" class="btn btn-sm btn-primary">Adicionar cardápio</a>
+                                <a href="{{ route('event.create') }}" class="btn btn-sm btn-primary">Adicionar evento</a>
                             </div>
                         </div>
                     </div>
@@ -34,24 +34,26 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Dia</th>
-                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Lugar</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($meals as $meal)
+                                @foreach ($events as $event)
                                     <tr>
-                                        <td>{{ $meal->scheduledDay->format('d/m/Y') }}</td>
-                                        <td>{{ $meal->description }}</td>
+                                        <td>{{ $event->scheduledDay->format('d/m/Y') }}</td>
+                                        <td>{{ $event->name }}</td>
+                                        <td>{{ $event->place }}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                    <a class="dropdown-item" href="{{ route('meal.show', $meal) }}">Visualizar</a>
-                                                    <a class="dropdown-item" href="{{ route('meal.edit', $meal) }}">Editar</a>
-                                                    <form action="{{ route('meal.destroy', $meal) }}" method="post">
+                                                    <a class="dropdown-item" href="{{ route('event.show', $event) }}">Visualizar</a>
+                                                    <a class="dropdown-item" href="{{ route('event.edit', $event) }}">Editar</a>
+                                                    <form action="{{ route('event.destroy', $event) }}" method="post">
                                                         @csrf
                                                         @method('delete')
 
@@ -72,7 +74,7 @@
                     </div>
                     <div class="card-footer py-4">
                         <nav class="d-flex justify-content-end" aria-label="...">
-                            <!-- { $meals->links() } -->
+                            <!-- { $events->links() } -->
                         </nav>
                     </div>
                 </div>

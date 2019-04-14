@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import MealList from '../containers/MealList'
+import AppHeader from './AppHeader'
+
+import Event from '../containers/Event'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MealList/>
+        <AppHeader/>
+        <Event/>
       </div>
     )
   }

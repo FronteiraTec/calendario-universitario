@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get("meal", "MealController@indexApi");
 Route::get("meal/{meal}", "MealController@showApi");
+Route::get("event", "EventController@indexApi");
+Route::get("event/{event}", "EventController@showApi");
