@@ -1,12 +1,16 @@
 .EventItem {
   align-items: center;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
+  background-color: #009688;
   border-radius: 1rem;
-  background-color: #1976d2;
   color: white;
   display: flex;
   justify-content: justify;
   margin: .8em 0;
+}
+
+.EventItem--menu {
+  background-color: #0288D1;
 }
 
 .EventItem__day {

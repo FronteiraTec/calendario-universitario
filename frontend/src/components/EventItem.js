@@ -35,7 +35,7 @@ const formatDescription = description => {
 
 const EventItem = (props) => {
   return (
-    <div className="EventItem">
+    <div className={`EventItem EventItem--${props.type}`}>
       <div className="EventItem__day">
         <div className="EventItem__week-day">
           { getWeekDay(props.scheduledDay) }
