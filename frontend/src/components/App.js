@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
-import AppHader from './AppHeader'
+import AppHeader from './AppHeader'
 
 import Event from '../containers/Event'
 
@@ -9,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppHader/>
+        <AppHeader/>
         <Event/>
       </div>
     )

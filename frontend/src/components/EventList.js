@@ -1,6 +1,8 @@
 import React from 'react'
 import EventItem from './EventItem'
 
+import './EventList.css'
+
 const EventList = ({events}) => {
   return (
     <ul className="EventList">
