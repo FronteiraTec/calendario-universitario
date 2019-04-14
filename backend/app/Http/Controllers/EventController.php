@@ -15,7 +15,8 @@ class EventController extends Controller
     public function index()
     {
         $events = Event
-            ::orderBy("scheduledDay")
+            ::where('type', 'event')
+            ->orderBy("scheduledDay")
             ->orderBy("scheduledTime")
             ->get();
         return view("events.index", compact("events"));
