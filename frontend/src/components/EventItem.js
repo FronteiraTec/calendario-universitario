@@ -15,7 +15,6 @@ const getWeekDay = (dateProp, complete = false) => {
     {short: 'Sex', long: 'Sexta'},
     {short: 'Sab', long: 'Sabádo'},
   ]
-  console.log(date)
   return daysConfig[weekNumberDay][complete ? 'long' : 'short']
 }
 
