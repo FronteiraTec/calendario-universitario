@@ -102,7 +102,7 @@ class EventController extends Controller
             "description" => $request->description,
             "scheduledDay" => $request->scheduledDay,
             "scheduledTime" => $request->scheduledTime
-                ? "$request->scheduledTime:00"
+                ? "$request->scheduledTime"
                 : null,
             "place" => $request->place
         ]);
