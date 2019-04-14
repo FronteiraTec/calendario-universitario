@@ -14,13 +14,19 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy("day")->get();
+        $events = Event
+            ::orderBy("scheduledDay")
+            ->orderBy("scheduledTime")
+            ->get();
         return view("events.index", compact("events"));
     }
 
     public function indexApi()
     {
-        $events = Event::orderBy("day")->get();
+        $events = Event
+            ::orderBy("scheduledDay")
+            ->orderBy("scheduledTime")
+            ->get();
         return response()->json($events);
     }
 
@@ -42,12 +48,14 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $datetime = "$request->day $request->schedule:00";
         $event = Event::create([
             "name" => $request->name,
-            "day" => $datetime,
-            "place" => $request->place,
-            "description" => $request->description
+            "description" => $request->description,
+            "scheduledDay" => $request->scheduledDay,
+            "scheduledTime" => $request->scheduledTime
+                ? "$request->scheduledTime:00"
+                : null,
+            "place" => $request->place
         ]);
         return redirect()->route("event.show", ["id" => $event->id]);
     }
@@ -88,12 +96,14 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $datetime = "$request->day $request->schedule:00";
         $event->update([
             "name" => $request->name,
-            "day" => $datetime,
-            "place" => $request->place,
-            "description" => $request->description
+            "description" => $request->description,
+            "scheduledDay" => $request->scheduledDay,
+            "scheduledTime" => $request->scheduledTime
+                ? "$request->scheduledTime:00"
+                : null,
+            "place" => $request->place
         ]);
         return redirect()->route("event.show", ["id" => $event->id]);
     }

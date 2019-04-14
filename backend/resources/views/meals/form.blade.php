@@ -1,14 +1,14 @@
 <div class="pl-lg-4">
-    <div class="form-group{{ $errors->has('day') ? ' has-danger' : '' }}">
-        <label class="form-control-label" for="input-day">Data</label>
+    <div class="form-group{{ $errors->has('scheduledDay') ? ' has-danger' : '' }}">
+        <label class="form-control-label" for="input-scheduledDay">Data</label>
         <input
             type="date"
-            name="day"
-            id="input-day"
-            class="form-control form-control-alternative{{ $errors->has('day') ? ' is-invalid' : '' }}"
+            name="scheduledDay"
+            id="input-scheduledDay"
+            class="form-control form-control-alternative{{ $errors->has('scheduledDay') ? ' is-invalid' : '' }}"
             placeholder="Data"
             @if ($action != 'create')
-                value="{{ old('day', $meal->day->format('Y-m-d')) }}"
+                value="{{ old('scheduledDay', $meal->scheduledDay->format('Y-m-d')) }}"
             @endif
             @if ($action == 'show')
                 readonly
@@ -17,9 +17,9 @@
             autofocus
         >
 
-        @if ($errors->has('day'))
+        @if ($errors->has('scheduledDay'))
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('day') }}</strong>
+                <strong>{{ $errors->first('scheduledDay') }}</strong>
             </span>
         @endif
     </div>

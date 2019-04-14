@@ -42,7 +42,7 @@
                             <tbody>
                                 @foreach ($events as $event)
                                     <tr>
-                                        <td>{{ $event->day->format('d/m/Y') }}</td>
+                                        <td>{{ $event->scheduledDay->format('d/m/Y') }}</td>
                                         <td>{{ $event->name }}</td>
                                         <td>{{ $event->place }}</td>
                                         <td class="text-right">

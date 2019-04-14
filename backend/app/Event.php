@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        "name", "description", "day", "place"
+        "name", "type", "description", "scheduledDay", "scheduledTime", "place"
     ];
 
     protected $dates = [
-        "day"
+        "scheduledDay"
     ];
 }

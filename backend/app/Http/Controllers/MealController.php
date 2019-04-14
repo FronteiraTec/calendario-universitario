@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Meal;
+use App\Event;
 use Illuminate\Http\Request;
 
 class MealController extends Controller
@@ -14,13 +14,13 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::orderBy("day")->get();
-        return view("meals.index", compact("meals"));
+        $meals = Event::where("type", "menu")->orderBy("scheduledDay")->get();
+        return view("meals.index", ["meals" => $meals]);
     }
 
     public function indexApi()
     {
-        $meals = Meal::orderBy("day")->get();
+        $meals = Event::where("type", "menu")->orderBy("scheduledDay")->get();
         return response()->json($meals);
     }
 
@@ -42,8 +42,10 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        $meal = Meal::create([
-            "day" => $request->day,
+        $meal = Event::create([
+            "name" => "",
+            "scheduledDay" => $request->scheduledDay,
+            "type" => "menu",
             "description" => $request->description
         ]);
         return redirect()->route("meal.show", ["id" => $meal->id]);
@@ -52,26 +54,26 @@ class MealController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Meal  $meal
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Meal $meal)
+    public function show(Event $meal)
     {
         return view("meals.show", ["meal" => $meal]);
     }
 
-    public function showApi(Meal $meal)
+    public function showApi(Event $meal)
     {
-        return response()->json($meal);
+        return response()->json($event);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Meal  $meal
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Meal $meal)
+    public function edit(Event $meal)
     {
         return view("meals.edit", ["meal" => $meal]);
     }
@@ -80,13 +82,13 @@ class MealController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Meal  $meal
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Meal $meal)
+    public function update(Request $request, Event $meal)
     {
         $meal->update([
-            "day" => $request->day,
+            "scheduledDay" => $request->scheduledDay,
             "description" => $request->description
         ]);
         return redirect()->route("meal.show", ["id" => $meal->id]);
@@ -95,10 +97,10 @@ class MealController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Meal  $meal
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Meal $meal)
+    public function destroy(Event $meal)
     {
         $meal->delete();
         return redirect()->route("meal.index");

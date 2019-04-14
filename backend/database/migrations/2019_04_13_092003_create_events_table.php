@@ -16,9 +16,11 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->enum('type', ['menu', 'event'])->default('event');
             $table->text('description');
-            $table->datetime('day');
-            $table->string('place');
+            $table->date('scheduledDay');
+            $table->time('scheduledTime')->nullable();
+            $table->string('place')->nullable();
             $table->timestamps();
         });
     }

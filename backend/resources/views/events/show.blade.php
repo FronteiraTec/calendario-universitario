@@ -23,6 +23,9 @@
                             'action' => 'show',
                             'event' => $event
                         ])
+                        <div class="text-center">
+                            <a href="{{ route('event.edit', $event) }}" class="btn btn-primary mt-4">Editar</a>
+                        </div>
                     </div>
                 </div>
             </div>

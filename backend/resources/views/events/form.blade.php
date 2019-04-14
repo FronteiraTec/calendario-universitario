@@ -23,15 +23,15 @@
         @endif
     </div>
 
-    <div class="form-group{{ $errors->has('day') ? ' has-danger' : '' }}">
-        <label class="form-control-label" for="input-day">Data</label>
+    <div class="form-group{{ $errors->has('scheduledDay') ? ' has-danger' : '' }}">
+        <label class="form-control-label" for="input-scheduledDay">Data</label>
         <input
             type="date"
-            name="day"
-            id="input-day"
-            class="form-control form-control-alternative{{ $errors->has('day') ? ' is-invalid' : '' }}"
+            name="scheduledDay"
+            id="input-scheduledDay"
+            class="form-control form-control-alternative{{ $errors->has('scheduledDay') ? ' is-invalid' : '' }}"
             @if ($action != 'create')
-                value="{{ old('day', $event->day->format('Y-m-d')) }}"
+                value="{{ old('scheduledDay', $event->scheduledDay->format('Y-m-d')) }}"
             @endif
             @if ($action == "show")
                 readonly
@@ -39,32 +39,31 @@
             required
         >
 
-        @if ($errors->has('day'))
+        @if ($errors->has('scheduledDay'))
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('day') }}</strong>
+                <strong>{{ $errors->first('scheduledDay') }}</strong>
             </span>
         @endif
     </div>
 
-    <div class="form-group{{ $errors->has('schedule') ? ' has-danger' : '' }}">
-        <label class="form-control-label" for="input-schedule">Hora</label>
+    <div class="form-group{{ $errors->has('scheduledTime') ? ' has-danger' : '' }}">
+        <label class="form-control-label" for="input-scheduledTime">Hora</label>
         <input
             type="time"
-            name="schedule"
-            id="input-schedule"
-            class="form-control form-control-alternative{{ $errors->has('schedule') ? ' is-invalid' : '' }}"
+            name="scheduledTime"
+            id="input-scheduledTime"
+            class="form-control form-control-alternative{{ $errors->has('scheduledTime') ? ' is-invalid' : '' }}"
             @if ($action != 'create')
-                value="{{ old('day', $event->day->format('H:i')) }}"
+                value="{{ old('scheduledTime', $event->scheduledTime) }}"
             @endif
             @if ($action == "show")
                 readonly
             @endif
-            required
         >
 
-        @if ($errors->has('schedule'))
+        @if ($errors->has('scheduledTime'))
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('schedule') }}</strong>
+                <strong>{{ $errors->first('scheduledTime') }}</strong>
             </span>
         @endif
     </div>
@@ -100,7 +99,6 @@
             name="description"
             id="input-description"
             class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}"
-            required
             @if ($action == "show")
                 readonly
             @endif
@@ -113,7 +111,9 @@
         @endif
     </div>
 
+    @if ($action != 'show')
     <div class="text-center">
         <button type="submit" class="btn btn-success mt-4">Salvar</button>
     </div>
+    @endif
 </div>

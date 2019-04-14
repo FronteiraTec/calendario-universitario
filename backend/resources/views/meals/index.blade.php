@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => 'Gerenciar Cardápios'])
 
 @section('content')
-    @include('layouts.headers.title-header', ['title' => 'Cardápios']) 
+    @include('layouts.headers.title-header', ['title' => 'Cardápios'])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -41,7 +41,7 @@
                             <tbody>
                                 @foreach ($meals as $meal)
                                     <tr>
-                                        <td>{{ $meal->day->format('d/m/Y') }}</td>
+                                        <td>{{ $meal->scheduledDay->format('d/m/Y') }}</td>
                                         <td>{{ $meal->description }}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
@@ -54,14 +54,14 @@
                                                     <form action="{{ route('meal.destroy', $meal) }}" method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        
+
                                                         <button type="button" class="dropdown-item"
                                                             onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''"
                                                             style="cursor: pointer"
                                                         >
                                                             Remover
                                                         </button>
-                                                    </form>    
+                                                    </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection
