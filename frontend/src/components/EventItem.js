@@ -1,7 +1,7 @@
 import React from 'react'
 import "./EventItem.css"
 
-import sanitalize from 'sanitize-html'
+// import sanitalize from 'sanitize-html'
 
 const getWeekDay = (dateProp, complete = false) => {
   const date = new Date(dateProp)
@@ -24,13 +24,13 @@ const getDateNumber = dateProp => {
 }
 
 const formatNameByTime = (name, scheduledDay, type) => {
-  if (type == "event") return name
+  if (type === "event") return name
   return `Cardário RU de ${getWeekDay(scheduledDay, true)}`
 }
 
-const formatDescription = description => {
-  return sanitalize(description.replace(/\n/g, "<br>"))
-}
+// const formatDescription = description => {
+//   return sanitalize(description.replace(/\n/g, "<br>"))
+// }
 
 const EventItem = (props) => {
   return (
