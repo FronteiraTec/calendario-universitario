@@ -1,4 +1,4 @@
-.MealItem {
+.EventItem {
   align-items: center;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
   border-radius: 1rem;
@@ -8,19 +8,19 @@
   margin: .8em 0;
 }
 
-.MealItem__day {
+.EventItem__day {
   padding: .5rem .8rem;
   text-align: center;
 }
 
-.MealItem__week-day {
+.EventItem__week-day {
   font-size: .9em;
 }
 
-.MealItem__day-number {
+.EventItem__day-number {
   font-size: 1.7em;
 }
 
-.MealItem__description {
+.EventItem__description {
   padding: .5rem .8rem;
 }

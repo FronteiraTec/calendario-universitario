@@ -1,5 +1,5 @@
 import React from 'react'
-import "./MealItem.css"
+import "./EventItem.css"
 
 import sanitalize from 'sanitize-html'
 
@@ -34,18 +34,18 @@ const formatDescription = description => {
   return sanitalize(description.replace(/\n/g, "<br>"))
 }
 
-const MealItem = (props) => {
+const EventItem = (props) => {
   return (
-    <div className="MealItem">
-      <div className="MealItem__day">
-        <div className="MealItem__week-day">
-          { getWeekDay(props.day) }
+    <div className="EventItem">
+      <div className="EventItem__day">
+        <div className="EventItem__week-day">
+          { getWeekDay(props.scheduledDay) }
         </div>
-        <div className="MealItem__day-number">
-          { getDateNumber(props.day) }
+        <div className="EventItem__day-number">
+          { getDateNumber(props.scheduledDay) }
         </div>
       </div>
-      <div className="MealItem__description"
+      <div className="EventItem__description"
         dangerouslySetInnerHTML={{
           __html: sanitalize(formatDescription(props.description))
         }}>
@@ -54,4 +54,4 @@ const MealItem = (props) => {
   )
 }
 
-export default MealItem
+export default EventItem
