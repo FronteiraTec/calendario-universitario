@@ -3,6 +3,7 @@
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
   border-radius: 1rem;
   background-color: #1976d2;
+  color: white;
   display: flex;
   justify-content: justify;
   margin: .8em 0;
