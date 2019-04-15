@@ -1,9 +1,14 @@
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS'
-
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
   events
 });
+
+export const TOGGLE_OPENED = 'TOGGLE_OPENED'
+export const toggleOpened = index => ({
+  type: TOGGLE_OPENED,
+  index
+})
 
 export const fetchEvents = () =>
   dispatch =>
