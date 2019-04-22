@@ -20,8 +20,7 @@ const events = (state = initialState, action) => {
     default:
       return state
   }
-
-  console.log(newState.events[action.index])
+  
   return newState
 }
 
