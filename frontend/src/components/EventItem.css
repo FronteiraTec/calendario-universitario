@@ -1,12 +1,15 @@
 .EventItem {
-  align-items: center;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
   background-color: #009688;
   border-radius: 1rem;
   color: white;
+  margin: .8em 0;
+}
+
+.EventItem__card {
+  align-items: center;
   display: flex;
   justify-content: justify;
-  margin: .8em 0;
 }
 
 .EventItem--menu {
@@ -26,6 +29,16 @@
   font-size: 1.7em;
 }
 
-.EventItem__description {
+.EventItem__name {
   padding: .5rem .8rem;
+}
+
+.EventItem__info {
+  padding: .3em 1em;
+  padding-bottom: .8em;
+}
+
+.EventItem__attributes {
+  line-height: 1.3em;
+  margin-bottom: .2em;
 }
