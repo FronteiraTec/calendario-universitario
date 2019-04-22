@@ -2,18 +2,21 @@
 
 @section('content')
     @include('layouts.headers.title-header', [
-        'title' => "Olá " . ' '. auth()->user()->name,
-        'description' => "Essa é a página do seu perfil, aqui você pode editar as configurações da sua conta",
-        'class' => 'col-lg-7'
+        'title' => "Administradores",
     ])
 
     <div class="container-fluid mt--7">
         <div class="row">
-            <div class="col-xl-9">
+            <div class="col-xl-12">
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">Editar perfil</h3>
+                            <div class="col-8">
+                                <h3 class="mb-0">Editar perfil</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">ir para lista</a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
