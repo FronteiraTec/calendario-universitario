@@ -1,10 +1,14 @@
-import { RECEIVE_EVENTS, TOGGLE_OPENED, UPDATE_MONTH } from "../actions/event"
+import { RECEIVE_EVENTS, TOGGLE_OPENED, UPDATE_FILTER } from "../actions/event"
 
-const actualMonth = (new Date()).getMonth()
+const month = (new Date()).getMonth()
+const year = (new Date()).getFullYear()
 
 const initialState = {
   events: [],
-  actualMonth
+  filter: {
+    month,
+    year
+  }
 }
 
 const events = (state = initialState, action) => {
@@ -20,9 +24,9 @@ const events = (state = initialState, action) => {
         isOpened: !newState.events[action.index].isOpened
       }
       break
-    case UPDATE_MONTH:
+    case UPDATE_FILTER:
       newState.events = [...action.events]
-      newState.actualMonth = action.actualMonth
+      newState.filter = {...action.filter}
       break
     default:
       return state

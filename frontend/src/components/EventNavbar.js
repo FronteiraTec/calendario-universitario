@@ -25,13 +25,13 @@ const getMonthName = month => {
 const EventNavbar = props => (
   <div className="EventNavbar">
     <div className="EventNavbar__controls">
-      <button onClick={() => {prevMonth(props.month)}} className="EventNavbar__buttons">
+      <button onClick={() => {prevMonth({month : props.month, year: props.year})}} className="EventNavbar__buttons">
         <i className="fas fa-angle-left"></i>
       </button>
     </div>
     <div className="EventNavbar__label">{getMonthName(props.month)}</div>
     <div className="EventNavbar__controls">
-      <button onClick={() => {nextMonth(props.month)}} className="EventNavbar__buttons">
+      <button onClick={() => {nextMonth({month : props.month, year: props.year})}} className="EventNavbar__buttons">
         <i className="fas fa-angle-right"></i>
       </button>
     </div>

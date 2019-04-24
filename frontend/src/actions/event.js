@@ -12,45 +12,59 @@ export const toggleOpened = index => ({
   index
 })
 
-export const UPDATE_MONTH = 'UPDATE_MONTH'
-export const updateMonth = ({actualMonth, events}) => ({
-  type: UPDATE_MONTH,
-  actualMonth,
+export const UPDATE_FILTER = 'UPDATE_FILTER'
+export const updateFilter = ({filter, events}) => ({
+  type: UPDATE_FILTER,
+  filter,
   events
 })
 
-const actualMonth = (new Date()).getMonth() 
-export const fetchEvents = (month = actualMonth) =>
-    fetch("http://localhost:8080/api/event/", {
-      mode: "cors",
+const date = new Date()
+const actualMonth = date.getMonth() + 1
+const actualYear =  date.getFullYear()
+
+export const fetchEvents = (month = `${actualYear}-${actualMonth}`) =>
+  fetch(`http://localhost:8080/api/event/month/${month}`, {
+    mode: "cors",
+  })
+    .then(response => {
+      return response.json()
     })
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        store.dispatch(receiveEvents(data))
-        return data
-      })
-
-export const nextMonth = (month) => {
-  console.log(month)
-  updateMonthAndFetch(month + 1)
-}
-
-export const prevMonth = (month) => {
-  console.log(month)
-  updateMonthAndFetch(month - 1)
-}
-
-export const updateMonthAndFetch = (month) => {
-  console.log(month)
-  store.dispatch(receiveEvents([]))
-  return fetchEvents(month)
     .then(data => {
-      store.dispatch(updateMonth({
-        actualMonth: month,
-        events: data
-      }))
+      store.dispatch(receiveEvents(data))
       return data
+    })
+  
+export const prevMonth = (filter) => {
+  const newFilter = {...filter}
+  if (filter.month == 0) {
+    newFilter.month = 11
+    newFilter.year--
+  } else {
+    newFilter.month--
+  }
+  updateFilterAndFetch(newFilter)
+}
+
+export const nextMonth = (filter) => {
+  const newFilter = {...filter}
+  if (filter.month == 11) {
+    newFilter.month = 0
+    newFilter.year++
+  } else {
+    newFilter.month++
+  }
+  updateFilterAndFetch(newFilter)
+}
+
+export const updateFilterAndFetch = (filter) => {
+  store.dispatch(receiveEvents([]))
+  return fetchEvents(`${filter.year}-${filter.month + 1}`)
+    .then(events => {
+      store.dispatch(updateFilter({
+        filter,
+        events
+      }))
+      return events
     })
 }

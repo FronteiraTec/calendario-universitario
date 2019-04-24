@@ -14,7 +14,10 @@ class EventListContainer extends Component {
   render () {
     return (
       <div>
-        <EventNavbar month={this.props.actualMonth}/>
+        <EventNavbar
+          month={this.props.filter.month}
+          year={this.props.filter.year}
+        />
         <EventList events={this.props.events} />
       </div>
     )
@@ -23,7 +26,7 @@ class EventListContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    actualMonth: state.event.actualMonth,
+    filter: state.event.filter,
     events: state.event.events
   }
 }
