@@ -1,7 +1,10 @@
-import { RECEIVE_EVENTS, TOGGLE_OPENED } from "../actions/event"
+import { RECEIVE_EVENTS, TOGGLE_OPENED, UPDATE_MONTH } from "../actions/event"
+
+const actualMonth = (new Date()).getMonth()
 
 const initialState = {
   events: [],
+  actualMonth
 }
 
 const events = (state = initialState, action) => {
@@ -16,6 +19,10 @@ const events = (state = initialState, action) => {
         ...newState.events[action.index],
         isOpened: !newState.events[action.index].isOpened
       }
+      break
+    case UPDATE_MONTH:
+      newState.events = [...action.events]
+      newState.actualMonth = action.actualMonth
       break
     default:
       return state

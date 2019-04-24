@@ -1,0 +1,29 @@
+.EventNavbar {
+  align-items: center;
+  background-color: rgba(255, 255, 255, .9);
+  box-shadow: 0 1px 3px .5px rgba(0, 0, 0, .3);
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  height: 2.5rem;
+  top: 3.4rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 49;
+}
+
+.EventNavbar__label {
+  text-align: center;
+  font-weight: 500;
+}
+
+.EventNavbar__controls {
+  text-align: center;
+}
+
+.EventNavbar__buttons {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0 .5em;
+}

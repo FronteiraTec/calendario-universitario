@@ -1,10 +1,10 @@
 .AppHeader-offsize {
-  padding-top: 1.75rem;
+  padding-top: 4.25rem;
 }
 
 .AppHeader {
   background-color: white;
-  box-shadow: 0 2px 4px .5px rgba(0, 0, 0, .3);
+  box-shadow: 0 1px 3px .5px rgba(0, 0, 0, .3);
   padding: .2rem .8rem;
   display: flex;
   line-height: 3rem;
@@ -12,6 +12,7 @@
   top: 0;
   left: 0;
   width: 100vw;
+  z-index: 50;
 }
 
 .AppHeader__menu-button {
