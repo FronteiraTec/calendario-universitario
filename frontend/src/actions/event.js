@@ -37,7 +37,7 @@ export const fetchEvents = (month = `${actualYear}-${actualMonth}`) =>
   
 export const prevMonth = (filter) => {
   const newFilter = {...filter}
-  if (filter.month == 0) {
+  if (filter.month === 0) {
     newFilter.month = 11
     newFilter.year--
   } else {
@@ -48,7 +48,7 @@ export const prevMonth = (filter) => {
 
 export const nextMonth = (filter) => {
   const newFilter = {...filter}
-  if (filter.month == 11) {
+  if (filter.month === 11) {
     newFilter.month = 0
     newFilter.year++
   } else {
