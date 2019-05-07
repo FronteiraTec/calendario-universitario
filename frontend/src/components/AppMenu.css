@@ -1,0 +1,56 @@
+.AppMenu__content {
+  background-color: rgba(255, 255, 255, 0.975);
+  box-shadow: 0;
+  height: 100vh;
+  width: 80vw;
+  max-width: 350px;
+  position: fixed;
+  transition: .3s all ease;
+  left: -80vw;
+  top: 0;
+  z-index: 80;
+}
+
+.AppMenu--opened .AppMenu__content {
+  left: 0;
+  box-shadow: 0 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.AppMenu__cover {
+  background-color: rgba(0, 0, 0, 0);
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  transition: .3s background-color ease;
+  position: fixed;
+  z-index: -1;
+}
+
+.AppMenu--opened .AppMenu__cover {
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 79;
+}
+
+.AppMenu__list {
+
+}
+
+.AppMenu__item {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  padding: .8rem;
+  transition: .1s all ease;
+}
+
+.AppMenu__item:active {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.AppMenu__icon {
+  display: inline-block;
+  width: 2em;
+  text-align: center; 
+}
+
