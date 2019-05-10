@@ -4,10 +4,10 @@
     @include('layouts.headers.title-header' , ["title" => "Calendário UFFS"])
 
     <div class="container-fluid mt--7">
-        <div class="row mt-5">
+        <div class="row mt-7">
 
         </div>
-        <!-- @include('layouts.footers.auth') -->
+        @include('layouts.footers.auth')
     </div>
 @endsection
 

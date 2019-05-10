@@ -1,0 +1,31 @@
+.Alert {
+  --alert-theme: var(--dark);
+  --alert-theme-transparent: var(--dark-transparent);
+  background: var(--alert-theme-transparent);
+  border: 2px solid var(--alert-theme);
+  border-radius: 1rem;
+  color: var(--alert-theme);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
+  padding: .75rem;
+}
+
+.Alert__icon {
+  text-align: center;
+  font-size: 5em;
+}
+
+.Alert__title {
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: .3em;
+}
+
+.Alert--green {
+  --alert-theme: var(--green);
+  --alert-theme-transparent: var(--green-transparent);
+}
+
+.Alert--blue {
+  --alert-theme: var(--blue);
+  --alert-theme-transparent: var(--blue-transparent);
+}

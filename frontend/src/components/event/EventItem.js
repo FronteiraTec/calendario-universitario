@@ -2,9 +2,9 @@ import React from 'react'
 import "./EventItem.css"
 
 import sanitalize from 'sanitize-html'
-import { store } from '../index'
+import { store } from '../../index'
 
-import { toggleOpened } from '../actions/event' 
+import { toggleOpened } from '../../actions/event' 
 
 const getWeekDay = (dateProp, complete = false) => {
   const date = new Date(dateProp)

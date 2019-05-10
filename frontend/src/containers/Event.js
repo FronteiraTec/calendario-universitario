@@ -3,23 +3,37 @@ import { connect } from 'react-redux'
 
 import { fetchEvents } from '../actions/event'
 
-import EventList from '../components/EventList'
+import EventList from '../components/event/EventList'
+import EventNavbar from '../components/event/EventNavbar'
 
 class EventListContainer extends Component {
   componentDidMount () {
-    const { dispatch } = this.props
-    fetchEvents()(dispatch)
+    fetchEvents()
   }
 
   render () {
     return (
-      <EventList events={this.props.events} />
+      <div>
+        <EventNavbar
+          month={this.props.filter.month}
+          year={this.props.filter.year}
+          isLoading={this.props.isFetching}
+        />
+        <EventList
+          events={this.props.events}
+          isLoading={this.props.isFetching}
+        />
+      </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return {events: state.event.events}
+  return {
+    filter: state.event.filter,
+    events: state.event.events,
+    isFetching: state.event.isFetching
+  }
 }
 
 const container = connect(

@@ -1,0 +1,70 @@
+.EventNavbar {
+  align-items: center;
+  background-color: rgba(255, 255, 255, .9);
+  box-shadow: 0 1px 3px .5px rgba(0, 0, 0, .3);
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  height: 2.5rem;
+  top: 3.4rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 49;
+}
+
+.EventNavbar__label {
+  text-align: center;
+  font-weight: 500;
+}
+
+.EventNavbar__controls {
+  text-align: center;
+}
+
+.EventNavbar__buttons {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  line-height: 1;
+  padding: 0 .5em;
+}
+
+.EventNavbar__loading {
+  --line-size: .3rem;
+  background-color: var(--green);
+  height: var(--line-size);
+  position: absolute;
+  bottom: calc(var(--line-size) * -1);
+  left: 0;
+  width: 0vw;
+}
+
+.EventNavbar__loading--active {
+  animation: stripe-loading 1.5s infinite ease-in-out;
+}
+
+
+@keyframes stripe-loading{
+  0% {
+    left: 0;
+    width: 0vw;
+  }
+  10% {
+    width: 20vw;
+  }
+  20% {
+    width: 30vw;
+  }
+  50% {
+    width: 60vw;
+  }
+  70% {
+    width: 30vw;
+  }
+  90% {
+    width: 20vw;
+  }
+  100% {
+    left: calc(100vw);
+    width: 0vw;
+  }
+}

@@ -31,6 +31,15 @@ class EventController extends Controller
         return response()->json($events);
     }
 
+    public function filterMonthApi($month)
+    {
+        $dateInfo = preg_split("/-/", $month);
+        $events = Event::whereYear('scheduledDay', $dateInfo[0])
+            ->whereMonth('scheduledDay', $dateInfo[1])
+            ->get();
+        return response()->json($events);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

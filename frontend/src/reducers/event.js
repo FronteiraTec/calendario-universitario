@@ -1,7 +1,20 @@
-import { RECEIVE_EVENTS, TOGGLE_OPENED } from "../actions/event"
+import {
+  RECEIVE_EVENTS,
+  TOGGLE_OPENED,
+  UPDATE_FILTER,
+  SET_FETCHING
+} from "../actions/event"
+
+const month = (new Date()).getMonth()
+const year = (new Date()).getFullYear()
 
 const initialState = {
+  isFetching: false,
   events: [],
+  filter: {
+    month,
+    year
+  }
 }
 
 const events = (state = initialState, action) => {
@@ -17,11 +30,17 @@ const events = (state = initialState, action) => {
         isOpened: !newState.events[action.index].isOpened
       }
       break
+    case UPDATE_FILTER:
+      newState.events = [...action.events]
+      newState.filter = {...action.filter}
+      break
+    case SET_FETCHING:
+      newState.isFetching = action.isFetching
+      break
     default:
       return state
   }
-
-  console.log(newState.events[action.index])
+  
   return newState
 }
 
