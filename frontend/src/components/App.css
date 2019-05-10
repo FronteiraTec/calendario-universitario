@@ -1,7 +1,16 @@
 :root {
   --green: #009688;
+  --green-transparent: #00968812;
+
   --blue: #0288D1;
+  --blue-transparent: #0288D112;
+
+  --dark: #444;
+  --dark-transparent: #44444412;
 
   --primary: var(--green);
+  --primary-transparent: var(--green-transparent);
+
   --accent: var(--blue);
+  --accent-transparent: var(--blue-transparent);
 }
