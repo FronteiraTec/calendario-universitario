@@ -1,4 +1,14 @@
 .EventList {
-  list-style: none;
   padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.EventList__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.EventList__item {
+  margin-bottom: .8em;
 }

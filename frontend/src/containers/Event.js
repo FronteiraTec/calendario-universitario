@@ -19,7 +19,10 @@ class EventListContainer extends Component {
           year={this.props.filter.year}
           isLoading={this.props.isFetching}
         />
-        <EventList events={this.props.events} />
+        <EventList
+          events={this.props.events}
+          isLoading={this.props.isFetching}
+        />
       </div>
     )
   }
