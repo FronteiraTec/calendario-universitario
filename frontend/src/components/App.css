@@ -1,0 +1,7 @@
+:root {
+  --green: #009688;
+  --blue: #0288D1;
+
+  --primary: var(--green);
+  --accent: var(--blue);
+}

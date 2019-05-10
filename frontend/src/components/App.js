@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './App.css'
+
 import AppHeader from './AppHeader'
 import AppMenu from './AppMenu'
 
