@@ -67,7 +67,6 @@ export const nextMonth = (filter) => {
 }
 
 export const updateFilterAndFetch = (filter) => {
-  store.dispatch(receiveEvents([]))
   return fetchEvents(`${filter.year}-${filter.month + 1}`)
     .then(events => {
       store.dispatch(updateFilter({
