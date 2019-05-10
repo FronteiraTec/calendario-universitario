@@ -35,7 +35,9 @@ const EventNavbar = props => (
         <i className="fas fa-angle-right"></i>
       </button>
     </div>
-    <div className="EventNavbar__loading"></div>
+    <div className={`EventNavbar__loading ${
+      props.isLoading ? 'EventNavbar__loading--active' : ""
+    }`}></div>
   </div>
 )
 

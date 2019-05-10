@@ -1,9 +1,15 @@
-import { RECEIVE_EVENTS, TOGGLE_OPENED, UPDATE_FILTER } from "../actions/event"
+import {
+  RECEIVE_EVENTS,
+  TOGGLE_OPENED,
+  UPDATE_FILTER,
+  SET_FETCHING
+} from "../actions/event"
 
 const month = (new Date()).getMonth()
 const year = (new Date()).getFullYear()
 
 const initialState = {
+  isFetching: false,
   events: [],
   filter: {
     month,
@@ -27,6 +33,9 @@ const events = (state = initialState, action) => {
     case UPDATE_FILTER:
       newState.events = [...action.events]
       newState.filter = {...action.filter}
+      break
+    case SET_FETCHING:
+      newState.isFetching = action.isFetching
       break
     default:
       return state

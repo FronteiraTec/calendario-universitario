@@ -17,6 +17,7 @@ class EventListContainer extends Component {
         <EventNavbar
           month={this.props.filter.month}
           year={this.props.filter.year}
+          isLoading={this.props.isFetching}
         />
         <EventList events={this.props.events} />
       </div>
@@ -27,7 +28,8 @@ class EventListContainer extends Component {
 const mapStateToProps = state => {
   return {
     filter: state.event.filter,
-    events: state.event.events
+    events: state.event.events,
+    isFetching: state.event.isFetching
   }
 }
 

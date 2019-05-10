@@ -19,21 +19,30 @@ export const updateFilter = ({filter, events}) => ({
   events
 })
 
+export const SET_FETCHING = 'SET_FETCHING'
+export const setFetching = isFetching => ({
+  type: SET_FETCHING,
+  isFetching
+})
+
 const date = new Date()
 const actualMonth = date.getMonth() + 1
 const actualYear =  date.getFullYear()
 
-export const fetchEvents = (month = `${actualYear}-${actualMonth}`) =>
-  fetch(`http://localhost:8080/api/event/month/${month}`, {
+export const fetchEvents = (month = `${actualYear}-${actualMonth}`) => {
+  store.dispatch(setFetching(true))
+  return fetch(`http://localhost:8080/api/event/month/${month}`, {
     mode: "cors",
   })
     .then(response => {
+      store.dispatch(setFetching(false))
       return response.json()
     })
     .then(data => {
       store.dispatch(receiveEvents(data))
       return data
     })
+}
   
 export const prevMonth = (filter) => {
   const newFilter = {...filter}
