@@ -1,6 +1,6 @@
 .EventItem {
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, .3);
-  background-color: #009688;
+  background-color: var(--green);
   border-radius: 1rem;
   color: white;
   margin: .8em 0;
@@ -13,7 +13,7 @@
 }
 
 .EventItem--menu {
-  background-color: #0288D1;
+  background-color: var(--blue);
 }
 
 .EventItem__day {

@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 import { fetchEvents } from '../actions/event'
 
-import EventList from '../components/EventList'
-import EventNavbar from '../components/EventNavbar'
+import EventList from '../components/event/EventList'
+import EventNavbar from '../components/event/EventNavbar'
 
 class EventListContainer extends Component {
   componentDidMount () {
