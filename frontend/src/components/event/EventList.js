@@ -25,23 +25,24 @@ const renderList = (events) => (
   </ul>
 )
 
-const warningNoEvent = (
+const WarningNoEvent = () => (
   <Alert
     title="Nenhum evento cadastrado"
     icon="far fa-grimace"
     color="blue"
+    align="center"
   />
 )
 
 const EventList = props => (
   <div className="EventList">
     {props.events.length == 0 && props.isLoading
-      ? <div class="EventList__loading">
+      ? <div className="EventList__loading">
           <LoadingCircle/>
         </div>
       : props.events.length > 0
         ? renderList(props.events)
-        : warningNoEvent
+        : <WarningNoEvent/>
     }
   </div>
 )
