@@ -1,9 +1,10 @@
 import React from 'react'
 import EventItem from './EventItem'
 
-import Alert from 'components/ui/Alert'
-
 import './EventList.css'
+
+import Alert from 'components/ui/Alert'
+import LoadingCircle from 'components/ui/LoadingCircle'
 
 const renderList = (events) => (
   <ul className="EventList__list">
@@ -34,11 +35,14 @@ const warningNoEvent = (
 
 const EventList = props => (
   <div className="EventList">
-    {props.events.length > 0 && !props.isLoading
-    ? renderList(props.events)
-    : props.isLoading
-      ? "Loading"
-      : warningNoEvent}
+    {props.events.length == 0 && props.isLoading
+      ? <div class="EventList__loading">
+          <LoadingCircle/>
+        </div>
+      : props.events.length > 0
+        ? renderList(props.events)
+        : warningNoEvent
+    }
   </div>
 )
 
