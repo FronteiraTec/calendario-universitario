@@ -23,13 +23,13 @@
   width: 100vw;
   left: -100vw;
   top: 0;
-  transition: .3s background-color ease;
   position: fixed;
   z-index: 79;
 }
 
 .AppMenu--opened .AppMenu__cover {
   background-color: rgba(0, 0, 0, .5);
+  transition: .3s background-color ease;
   left: 0;
 }
 
@@ -39,9 +39,7 @@
   margin-bottom: 1.5rem 0;
 }
 
-.AppMenu__list {
-
-}
+.AppMenu__list {}
 
 .AppMenu__item {
   display: block;
