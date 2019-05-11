@@ -1,9 +1,10 @@
 .AppMenu__content {
-  background-color: rgba(255, 255, 255, 0.975);
+  background-color: white;
   box-shadow: 0;
   height: 100vh;
   width: 80vw;
   max-width: 350px;
+  padding: .8rem;
   position: fixed;
   transition: .3s all ease;
   left: -80vw;
@@ -20,16 +21,22 @@
   background-color: rgba(0, 0, 0, 0);
   height: 100vh;
   width: 100vw;
-  left: 0;
+  left: -100vw;
   top: 0;
   transition: .3s background-color ease;
   position: fixed;
-  z-index: -1;
+  z-index: 79;
 }
 
 .AppMenu--opened .AppMenu__cover {
-  background-color: rgba(0, 0, 0, .3);
-  z-index: 79;
+  background-color: rgba(0, 0, 0, .5);
+  left: 0;
+}
+
+.AppMenu__title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem 0;
 }
 
 .AppMenu__list {
@@ -38,14 +45,24 @@
 
 .AppMenu__item {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
-  padding: .8rem;
+  line-height: 1.8em;
+  padding: .4rem;
   transition: .1s all ease;
+}
+
+.AppMenu__item--active {
+  background-color: var(--primary-transparent);
+  color: var(--primary);
 }
 
 .AppMenu__item:active {
   background-color: rgba(0, 0, 0, .2);
+}
+
+.AppMenu__item--active:active {
+  background-color: var(--primary-transparent);
 }
 
 .AppMenu__icon {

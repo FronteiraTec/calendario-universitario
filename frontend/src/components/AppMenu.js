@@ -9,9 +9,9 @@ const AppMenu = (props) => (
       onClick={() => props.handleCloseMenu()}
     ></div>
     <div className="AppMenu__content">
-      <h3>Calendário UFFS</h3>
+      <h3 className="AppMenu__title">Calendário UFFS</h3>
       <nav className="AppMenu__list">
-        <span className="AppMenu__item">
+        <span className="AppMenu__item AppMenu__item--active">
           <i className="AppMenu__icon fa fa-calendar-alt"></i>
           Calendário
         </span>
