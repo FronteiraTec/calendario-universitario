@@ -36,7 +36,7 @@ const WarningNoEvent = () => (
 
 const EventList = props => (
   <div className="EventList">
-    {props.events.length == 0 && props.isLoading
+    {props.events.length === 0 && props.isLoading
       ? <div className="EventList__loading">
           <LoadingCircle/>
         </div>
