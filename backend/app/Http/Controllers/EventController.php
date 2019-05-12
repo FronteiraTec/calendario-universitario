@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class EventController extends Controller
 {
@@ -12,16 +13,23 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $year = $request->query('year') ? $request->query('year') : now()->year;
+        $month = $request->query('month') ? $request->query('month') : now()->month;
+        $actualDate = Carbon::create($year, $month)->locale('pt');
+        $actualFilter = [
+            "year" => $year,
+            "monthName" => $actualDate->getTranslatedMonthName()
+        ];
+        $nextMonth = Carbon::create($year, $month)->addMonth();
+        $prevMonth = Carbon::create($year, $month)->subMonth();
         $events = Event
-            ::where('type', 'event')
-            ->whereYear('scheduledDay', $filterYear)
-            ->whereMonth('scheduledDay', $filterMonth)
-            ->orderBy("scheduledDay")
+            ::whereYearAndMonth($request->query('year'), $request->query('month'))
+            ->where("type", "event")
             ->orderBy("scheduledTime")
             ->get();
-        return view("events.index", compact("events"));
+        return view("events.index", compact("events", "actualFilter","nextMonth", "prevMonth"));
     }
 
     public function indexApi()

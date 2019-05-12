@@ -9,8 +9,23 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-4">
                                 <h3 class="mb-0">Lista de Eventos</h3>
+                            </div>
+                            <div class="col-4">
+                                <a href="{{ route('event.index', [
+                                    'month' => $prevMonth->month,
+                                    'year' => $prevMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <b>{{ ucfirst($actualFilter['monthName'])}} - {{$actualFilter['year']}}</b>
+                                <a href="{{ route('event.index', [
+                                    'month' => $nextMonth->month,
+                                    'year' => $nextMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="{{ route('event.create') }}" class="btn btn-sm btn-primary">Adicionar evento</a>
