@@ -16,6 +16,8 @@ class EventController extends Controller
     {
         $events = Event
             ::where('type', 'event')
+            ->whereYear('scheduledDay', $filterYear)
+            ->whereMonth('scheduledDay', $filterMonth)
             ->orderBy("scheduledDay")
             ->orderBy("scheduledTime")
             ->get();
@@ -36,6 +38,7 @@ class EventController extends Controller
         $dateInfo = preg_split("/-/", $month);
         $events = Event::whereYear('scheduledDay', $dateInfo[0])
             ->whereMonth('scheduledDay', $dateInfo[1])
+            ->orderBy('scheduledDay')
             ->get();
         return response()->json($events);
     }
