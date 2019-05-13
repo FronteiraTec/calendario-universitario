@@ -48,6 +48,8 @@
   line-height: 1.8em;
   padding: .4rem;
   transition: .1s all ease;
+  color: rgba(0,0,0,.87);
+  text-decoration: none;
 }
 
 .AppMenu__item--active {

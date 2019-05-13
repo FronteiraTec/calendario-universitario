@@ -1,5 +1,6 @@
 import React from 'react'
 import Swipe from 'react-easy-swipe'
+import { NavLink } from 'react-router-dom'
 
 import './AppMenu.css'
 
@@ -21,14 +22,26 @@ const AppMenu = (props) => (
       <div className="AppMenu__content">
         <h3 className="AppMenu__title">Calendário UFFS</h3>
         <nav className="AppMenu__list">
-          <span className="AppMenu__item AppMenu__item--active">
+          <NavLink
+            to={"/"}
+            className="AppMenu__item"
+            exact
+            activeClassName="AppMenu__item--active"
+            onClick={() => props.handleCloseMenu()}
+          >
             <i className="AppMenu__icon fa fa-calendar-alt"></i>
             Calendário
-          </span>
-          <span className="AppMenu__item">
+          </NavLink>
+          <NavLink
+            to={"/sobre"}
+            className="AppMenu__item"
+            exact
+            activeClassName="AppMenu__item--active"
+            onClick={() => props.handleCloseMenu()}
+          >
             <i className="AppMenu__icon fa fa-info"></i>
             Sobre
-          </span>
+          </NavLink>
         </nav>
       </div>
     </Swipe>

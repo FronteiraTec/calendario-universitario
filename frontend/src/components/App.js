@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'
+
+// import Router from '../router'
 
 import './App.css'
 
 import AppHeader from './AppHeader'
 import AppMenu from './AppMenu'
 
-import Event from '../containers/Event'
+import Calendar from 'pages/Calendar'
+import About from 'pages/About'
 
 class App extends Component {
   constructor () {
@@ -39,7 +43,10 @@ class App extends Component {
         <AppHeader
           handleMenuClick={() => this.openMenu()}
         />
-        <Event/>
+        <Switch>
+          <Route path={"/sobre"} component={About}/>
+          <Route path={"/"} component={Calendar}/>
+        </Switch>
       </div>
     )
   }
