@@ -1,12 +1,25 @@
 import React from 'react'
-import EventItem from './EventItem'
+import Swipe from 'react-easy-swipe'
 
 import './EventList.css'
+
+import { nextMonth, prevMonth } from "../../actions/event";
+
+import EventItem from './EventItem'
 
 import Alert from 'components/ui/Alert'
 import LoadingCircle from 'components/ui/LoadingCircle'
 
-const renderList = (events) => (
+const handleSwipeMove = ({month, year}) => event => {
+  const swipeRange = 100
+  if (event.x < swipeRange * -1) {
+    nextMonth({month, year})
+  } else if(event.x > swipeRange) {
+    prevMonth({month, year})
+  }
+}
+
+const renderList = events => (
   <ul className="EventList__list">
     { events.map((item, index) => (
       <li key={index} className="EventList__item">
@@ -35,16 +48,20 @@ const WarningNoEvent = () => (
 )
 
 const EventList = props => (
-  <div className="EventList">
-    {props.events.length === 0 && props.isLoading
-      ? <div className="EventList__loading">
-          <LoadingCircle/>
-        </div>
-      : props.events.length > 0
-        ? renderList(props.events)
-        : <WarningNoEvent/>
-    }
-  </div>
+  <Swipe
+    onSwipeMove={handleSwipeMove({month: props.month, year: props.year})}
+  >
+    <div className="EventList">
+      {props.events.length === 0 && props.isLoading
+        ? <div className="EventList__loading">
+            <LoadingCircle/>
+          </div>
+        : props.events.length > 0
+          ? renderList(props.events)
+          : <WarningNoEvent/>
+      }
+    </div>
+  </Swipe>
 )
 
 export default EventList
