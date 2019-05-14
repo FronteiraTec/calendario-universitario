@@ -80,7 +80,7 @@
                 </li>
                 @endif
 
-                @if ($user->hasPermission('event', 2))
+                @if ($user->hasPermission('event'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('event.index') }}">
                         <i class="ni ni-calendar-grid-58 text-primary"></i> Eventos
