@@ -72,7 +72,7 @@
                     </a>
                 </li>
 
-                @if ($user->hasPermission('meal'))
+                @if ($__user->hasPermission('meal'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('meal.index') }}">
                         <i class="ni ni-single-copy-04 text-primary"></i> Cardápios
@@ -80,7 +80,7 @@
                 </li>
                 @endif
 
-                @if ($user->hasPermission('event'))
+                @if ($__user->hasPermission('event'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('event.index') }}">
                         <i class="ni ni-calendar-grid-58 text-primary"></i> Eventos
@@ -88,7 +88,7 @@
                 </li>
                 @endif
 
-                @if ($user->hasPermission('master'))
+                @if ($__user->hasPermission('master'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.index') }}">
                         <i class="ni ni-single-02 text-primary"></i> Administradores

@@ -12,7 +12,7 @@ class Authenticate extends Middleware
     {
         parent::__construct($auth);
         $user = Auth::user();
-        view()->share('user', $user);
+        view()->share('__user', $user);
     }
 
     /**
