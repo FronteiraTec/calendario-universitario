@@ -65,12 +65,12 @@
                         @if ($action != 'create' && $user->permissionMeal == 2)
                         selected
                         @endif
-                    value="1">Criador</option>
+                    value="1">Editor</option>
                     <option
                         @if ($action != 'create' && $user->permissionMeal == 3)
                         selected
                         @endif
-                    value="2">Editor</option>
+                    value="2">Criador</option>
                     <option
                         @if ($action != 'create' && $user->permissionMeal == 4)
                         selected
@@ -108,12 +108,12 @@
                         @if ($action != 'create' && $user->permissionEvent == 2)
                         selected
                         @endif
-                    value="1">Criador</option>
+                    value="1">Editor</option>
                     <option
                         @if ($action != 'create' && $user->permissionEvent == 3)
                         selected
                         @endif
-                    value="2">Editor</option>
+                    value="2">Criador</option>
                     <option
                         @if ($action != 'create' && $user->permissionEvent == 4)
                         selected
