@@ -32,7 +32,7 @@ const getDateNumber = dateProp => {
 
 const formatNameByTime = (name, scheduledDay, type) => {
   if (type === "event") return name
-  return `Cardário RU de ${getWeekDay(scheduledDay, true)}`
+  return `Cardápio RU de ${getWeekDay(scheduledDay, true)}`
 }
 
 const formatDescription = description => {
