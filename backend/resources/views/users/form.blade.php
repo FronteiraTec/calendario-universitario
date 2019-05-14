@@ -57,25 +57,29 @@
                 >
                     <!-- Alguém melhora esse código pelo amor de deus -->
                     <option
+                        value="0"
                         @if ($action != 'create' && $user->permissionMeal == 0)
                         selected
                         @endif
-                    value="0">Sem acesso</option>
+                    >Sem acesso</option>
                     <option
+                        value="1"
+                        @if ($action != 'create' && $user->permissionMeal == 1)
+                        selected
+                        @endif
+                    >Editor</option>
+                    <option
+                        value="2"
                         @if ($action != 'create' && $user->permissionMeal == 2)
                         selected
                         @endif
-                    value="1">Editor</option>
+                    >Criador</option>
                     <option
+                        value="3"
                         @if ($action != 'create' && $user->permissionMeal == 3)
                         selected
                         @endif
-                    value="2">Criador</option>
-                    <option
-                        @if ($action != 'create' && $user->permissionMeal == 4)
-                        selected
-                        @endif
-                    value="3">Administrador</option>
+                    >Administrador</option>
                 </select>
 
                 @if ($errors->has('permissionMeal'))
@@ -100,25 +104,29 @@
                 >
                     <!-- Alguém melhora esse código pelo amor de deus -->
                     <option
+                        value="0"
                         @if ($action != 'create' && $user->permissionEvent == 0)
                         selected
                         @endif
-                    value="0">Sem acesso</option>
+                    >Sem acesso</option>
                     <option
+                        value="1"
+                        @if ($action != 'create' && $user->permissionEvent == 1)
+                        selected
+                        @endif
+                    >Editor</option>
+                    <option
+                        value="2"
                         @if ($action != 'create' && $user->permissionEvent == 2)
                         selected
                         @endif
-                    value="1">Editor</option>
+                    >Criador</option>
                     <option
+                        value="3"
                         @if ($action != 'create' && $user->permissionEvent == 3)
                         selected
                         @endif
-                    value="2">Criador</option>
-                    <option
-                        @if ($action != 'create' && $user->permissionEvent == 4)
-                        selected
-                        @endif
-                    value="3">Administrador</option>
+                    >Administrador</option>
                 </select>
 
                 @if ($errors->has('permissionEvent'))
