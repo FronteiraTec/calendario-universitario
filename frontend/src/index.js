@@ -8,6 +8,7 @@ import './font-config.css';
 import '@fortawesome/fontawesome-free/css/fontawesome.css'
 import '@fortawesome/fontawesome-free/css/solid.css'
 import '@fortawesome/fontawesome-free/css/regular.css'
+import '@fortawesome/fontawesome-free/css/brands.css'
 
 import App from 'components/App';
 import * as serviceWorker from './serviceWorker';
