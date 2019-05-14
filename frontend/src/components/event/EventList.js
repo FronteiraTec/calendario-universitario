@@ -10,12 +10,21 @@ import EventItem from './EventItem'
 import Alert from 'components/ui/Alert'
 import LoadingCircle from 'components/ui/LoadingCircle'
 
+
+let hasSwipeDone = false
 const handleSwipeMove = ({month, year}) => event => {
   const swipeRange = 100
-  if (event.x < swipeRange * -1) {
+
+  if (event.x > -100 && event.x < 100) {
+    hasSwipeDone = false
+  }
+
+  if (event.x < swipeRange * -1 && !hasSwipeDone) {
     nextMonth({month, year})
-  } else if(event.x > swipeRange) {
+    hasSwipeDone = true
+  } else if(event.x > swipeRange && !hasSwipeDone) {
     prevMonth({month, year})
+    hasSwipeDone = true
   }
 }
 
