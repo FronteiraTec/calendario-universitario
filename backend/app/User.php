@@ -10,6 +10,19 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function hasPermission($module, $nivel = 1)
+    {
+        switch ($module) {
+            case 'master':
+                return $this->permissionMaster;
+            case 'event':
+                return $this->permissionEvent >= $nivel || $this->permissionMaster;
+            case 'meal':
+                return $this->permissionMeal >= $nivel || $this->permissionMaster;
+        }
+        return false;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
