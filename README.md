@@ -39,6 +39,10 @@ Para acessar o container execute: `make enter-php`
 #### Frontend:
 Por padrão irá rodar na porta 3000, ou seja, em seu computador basta acessar [localhost:3000](https://localhost:3000).
 
+Existe um arquivo com configurações básicas no dir: `frontend/src/config.js`.
+
+Caso você queira acessar a aplicação em outros computadores apartir do seu IP será necessário configurar a váriavel `API_ADDRESS` no arquivo de configuração.
+
 Para acessar o container execute: `make enter-node`
 
 #### Banco de Dados:
