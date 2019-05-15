@@ -74,7 +74,7 @@
                                                         @method('delete')
 
                                                         <button type="button" class="dropdown-item"
-                                                            onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''"
+                                                            onclick="confirm('Tem certeza de que deseja remover esse cardápio?') ? this.parentElement.submit() : ''"
                                                             style="cursor: pointer"
                                                         >
                                                             Remover
