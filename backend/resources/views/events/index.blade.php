@@ -12,7 +12,7 @@
                             <div class="col-4">
                                 <h3 class="mb-0">Lista de Eventos</h3>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 text-center">
                                 <a href="{{ route('event.index', [
                                     'month' => $prevMonth->month,
                                     'year' => $prevMonth->year
