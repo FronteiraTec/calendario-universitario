@@ -72,29 +72,29 @@
                     </a>
                 </li>
 
-                @if ($__user->hasPermission('meal'))
+                @hasPermission('meal')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('meal.index') }}">
                         <i class="ni ni-single-copy-04 text-primary"></i> Cardápios
                     </a>
                 </li>
-                @endif
+                @endhasPermission
 
-                @if ($__user->hasPermission('event'))
+                @hasPermission('event')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('event.index') }}">
                         <i class="ni ni-calendar-grid-58 text-primary"></i> Eventos
                     </a>
                 </li>
-                @endif
+                @endhasPermission
 
-                @if ($__user->hasPermission('master'))
+                @hasPermission('master')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.index') }}">
                         <i class="ni ni-single-02 text-primary"></i> Administradores
                     </a>
                 </li>
-                @endif
+                @endhasPermission
             </ul>
         </div>
     </div>
