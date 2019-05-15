@@ -15,8 +15,9 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=uffs-calendar-database"
-      - "DB_PASSWORD=secret"
-
+      - "DB_DATABASE=uffscalendar"
+      - "DB_USERNAME=root"
+      - "DB_PASSWORD=root"
 
   uffs-calendar-web:
     container_name: uffs-calendar-web
@@ -37,10 +38,10 @@ services:
     volumes:
       - dbdata:/var/lib/mysql
     environment:
-      - "MYSQL_DATABASE=homestead"
-      - "MYSQL_USER=homestead"
-      - "MYSQL_PASSWORD=secret"
-      - "MYSQL_ROOT_PASSWORD=secret"
+      - "MYSQL_DATABASE=uffscalendar"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=root"
+      - "MYSQL_ROOT_PASSWORD=root"
     ports:
         - "33061:3306"
 
