@@ -12,7 +12,7 @@
                             <div class="col-4">
                                 <h3 class="mb-0">Lista de Cardápios</h3>
                             </div>
-                            <div class="col-4">
+                            <div class="col text-center">
                                 <a href="{{ route('meal.index', [
                                     'month' => $prevMonth->month,
                                     'year' => $prevMonth->year
@@ -28,7 +28,9 @@
                                 </a>
                             </div>
                             <div class="col-4 text-right">
+                                @hasPermission('meal', 2)
                                 <a href="{{ route('meal.create') }}" class="btn btn-sm btn-primary">Adicionar cardápio</a>
+                                @endhasPermission
                             </div>
                         </div>
                     </div>
@@ -66,6 +68,7 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a class="dropdown-item" href="{{ route('meal.show', $meal) }}">Visualizar</a>
                                                     <a class="dropdown-item" href="{{ route('meal.edit', $meal) }}">Editar</a>
+                                                    @hasPermission('meal', 3)
                                                     <form action="{{ route('meal.destroy', $meal) }}" method="post">
                                                         @csrf
                                                         @method('delete')
@@ -77,6 +80,7 @@
                                                             Remover
                                                         </button>
                                                     </form>
+                                                    @endhasPermission
                                                 </div>
                                             </div>
                                         </td>

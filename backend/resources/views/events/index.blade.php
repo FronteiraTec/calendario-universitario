@@ -28,7 +28,9 @@
                                 </a>
                             </div>
                             <div class="col-4 text-right">
+                                @hasPermission('event', 2)
                                 <a href="{{ route('event.create') }}" class="btn btn-sm btn-primary">Adicionar evento</a>
+                                @endhasPermission
                             </div>
                         </div>
                     </div>
@@ -68,6 +70,7 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a class="dropdown-item" href="{{ route('event.show', $event) }}">Visualizar</a>
                                                     <a class="dropdown-item" href="{{ route('event.edit', $event) }}">Editar</a>
+                                                    @hasPermission('event', 3)
                                                     <form action="{{ route('event.destroy', $event) }}" method="post">
                                                         @csrf
                                                         @method('delete')
@@ -79,6 +82,7 @@
                                                             Remover
                                                         </button>
                                                     </form>
+                                                    @endhasPermission
                                                 </div>
                                             </div>
                                         </td>
