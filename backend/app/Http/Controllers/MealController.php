@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class MealController extends Controller
 {
@@ -12,10 +13,22 @@ class MealController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $meals = Event::where("type", "menu")->orderBy("scheduledDay")->get();
-        return view("meals.index", ["meals" => $meals]);
+        $year = $request->query('year') ? $request->query('year') : now()->year;
+        $month = $request->query('month') ? $request->query('month') : now()->month;
+        $actualDate = Carbon::create($year, $month)->locale('pt');
+        $actualFilter = [
+            "year" => $year,
+            "monthName" => $actualDate->getTranslatedMonthName()
+        ];
+        $nextMonth = Carbon::create($year, $month)->addMonth();
+        $prevMonth = Carbon::create($year, $month)->subMonth();
+        $meals = Event
+            ::whereYearAndMonth($request->query('year'), $request->query('month'))
+            ->where("type", "menu")
+            ->get();
+        return view("meals.index", compact("meals", "actualFilter","nextMonth", "prevMonth"));
     }
 
     public function indexApi()

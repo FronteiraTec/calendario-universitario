@@ -12,3 +12,8 @@
 .EventList__item {
   margin-bottom: .8em;
 }
+
+.EventList__loading {
+  height: 100%;
+  padding: 15%;
+}

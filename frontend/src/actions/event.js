@@ -1,4 +1,5 @@
 import { store } from "../index";
+import config from "config"
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS'
 export const receiveEvents = (events) => ({
@@ -31,7 +32,7 @@ const actualYear =  date.getFullYear()
 
 export const fetchEvents = (month = `${actualYear}-${actualMonth}`) => {
   store.dispatch(setFetching(true))
-  return fetch(`http://localhost:8080/api/event/month/${month}`, {
+  return fetch(`${config.API_ADDRESS}/event/month/${month}`, {
     mode: "cors",
   })
     .then(response => {

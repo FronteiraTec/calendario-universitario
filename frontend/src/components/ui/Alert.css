@@ -20,6 +20,14 @@
   margin-bottom: .3em;
 }
 
+.Alert--text-center {
+  text-align: center;
+}
+
+.Alert--text-left {
+  text-align: left;
+}
+
 .Alert--green {
   --alert-theme: var(--green);
   --alert-theme-transparent: var(--green-transparent);

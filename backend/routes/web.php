@@ -19,10 +19,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
-    Route::resource('meal', 'MealController');
-    Route::resource('event', 'EventController');
 });
+
+Route::resource('meal', 'MealController')->middleware(['auth', 'handleResourcePermissions:meal']);
+Route::resource('event', 'EventController')->middleware(['auth', 'handleResourcePermissions:event']);
+Route::resource('user', 'UserController', ['except' => ['show']])->middleware(['auth', 'handlePermissions:master']);

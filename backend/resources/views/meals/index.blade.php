@@ -9,11 +9,28 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-4">
                                 <h3 class="mb-0">Lista de Cardápios</h3>
                             </div>
+                            <div class="col text-center">
+                                <a href="{{ route('meal.index', [
+                                    'month' => $prevMonth->month,
+                                    'year' => $prevMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <b>{{ ucfirst($actualFilter['monthName'])}} - {{$actualFilter['year']}}</b>
+                                <a href="{{ route('meal.index', [
+                                    'month' => $nextMonth->month,
+                                    'year' => $nextMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
                             <div class="col-4 text-right">
+                                @hasPermission('meal', 2)
                                 <a href="{{ route('meal.create') }}" class="btn btn-sm btn-primary">Adicionar cardápio</a>
+                                @endhasPermission
                             </div>
                         </div>
                     </div>
@@ -51,17 +68,19 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a class="dropdown-item" href="{{ route('meal.show', $meal) }}">Visualizar</a>
                                                     <a class="dropdown-item" href="{{ route('meal.edit', $meal) }}">Editar</a>
+                                                    @hasPermission('meal', 3)
                                                     <form action="{{ route('meal.destroy', $meal) }}" method="post">
                                                         @csrf
                                                         @method('delete')
 
                                                         <button type="button" class="dropdown-item"
-                                                            onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''"
+                                                            onclick="confirm('Tem certeza de que deseja remover esse cardápio?') ? this.parentElement.submit() : ''"
                                                             style="cursor: pointer"
                                                         >
                                                             Remover
                                                         </button>
                                                     </form>
+                                                    @endhasPermission
                                                 </div>
                                             </div>
                                         </td>

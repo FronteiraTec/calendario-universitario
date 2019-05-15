@@ -1,0 +1,25 @@
+.LoadingCircle {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.LoadingCircle__spinner {
+  animation: circle-spin .75s infinite linear;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: solid 7px var(--primary);
+  border-top-color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes circle-spin { 
+  100% { 
+    transform: rotate(360deg); 
+  } 
+} 

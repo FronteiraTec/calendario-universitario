@@ -9,11 +9,28 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-4">
                                 <h3 class="mb-0">Lista de Eventos</h3>
                             </div>
+                            <div class="col-4 text-center">
+                                <a href="{{ route('event.index', [
+                                    'month' => $prevMonth->month,
+                                    'year' => $prevMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <b>{{ ucfirst($actualFilter['monthName'])}} - {{$actualFilter['year']}}</b>
+                                <a href="{{ route('event.index', [
+                                    'month' => $nextMonth->month,
+                                    'year' => $nextMonth->year
+                                ]) }}" class="btn btn-sm btn-primary mx-1">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
                             <div class="col-4 text-right">
+                                @hasPermission('event', 2)
                                 <a href="{{ route('event.create') }}" class="btn btn-sm btn-primary">Adicionar evento</a>
+                                @endhasPermission
                             </div>
                         </div>
                     </div>
@@ -53,17 +70,19 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     <a class="dropdown-item" href="{{ route('event.show', $event) }}">Visualizar</a>
                                                     <a class="dropdown-item" href="{{ route('event.edit', $event) }}">Editar</a>
+                                                    @hasPermission('event', 3)
                                                     <form action="{{ route('event.destroy', $event) }}" method="post">
                                                         @csrf
                                                         @method('delete')
 
                                                         <button type="button" class="dropdown-item"
-                                                            onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''"
+                                                            onclick="confirm('Tem certeza de que deseja remover esse evento?') ? this.parentElement.submit() : ''"
                                                             style="cursor: pointer"
                                                         >
                                                             Remover
                                                         </button>
                                                     </form>
+                                                    @endhasPermission
                                                 </div>
                                             </div>
                                         </td>

@@ -14,3 +14,7 @@
   --accent: var(--blue);
   --accent-transparent: var(--blue-transparent);
 }
+
+body {
+  font-size: 16px;
+}
