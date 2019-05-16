@@ -34,10 +34,9 @@ Com isso sua aplicação está pronta para uso ;)
 #### Backend:
 Por padrão irá rodar na porta 8080, ou seja, em seu computador basta acessar [localhost:8080](https://localhost:8080).
 
-Credenciais de Administrador padão:
-    name => Admin Admin
-    email => admin@fronteiratec.com
-    password => admin
+Credenciais de Administrador padrão:
+  - E-mail: admin@fronteiratec.com
+  - Senha:  admin
 
 Para acessar o container execute: `make enter-php`
 
@@ -66,8 +65,8 @@ Caso você não se sinta confortável em utilizar Docker você pode rodar as apl
 ## Contribuir
 Toda ajuda é bem vinda então se você:
   - encontrou algúm bug: Por favor crie uma [issue](https://github.com/FronteiraTec/calendario-uffs/issues) sobre ele.
-  - Tem alguma ideia para o projeto: Crie uma [issue](https://github.com/FronteiraTec/calendario-uffs/issues) com sua ideia ;)
-  - Desenvolvou, corrigiu, implementou algo no projeto: Não tenha medo, crie um Pull Request :)
+  - Tem alguma idéia para o projeto: Crie uma [issue](https://github.com/FronteiraTec/calendario-uffs/issues) com sua idéia ;)
+  - Desenvolveu, corrigiu, implementou algo no projeto: Não tenha medo, crie um Pull Request :)
   - Gostaria de ajudar com o desenvolvimento: confira as [issues](https://github.com/FronteiraTec/calendario-uffs/issues) do projeto, caso tenha alguma que você acredite que possa ser útil comente lá e iremos lhe dar orientações sobre como dar sequência.
   - Além disso você pode apoiar o projeto:
     - Divulgando ele para seus amigos
