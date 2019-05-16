@@ -34,6 +34,11 @@ Com isso sua aplicação está pronta para uso ;)
 #### Backend:
 Por padrão irá rodar na porta 8080, ou seja, em seu computador basta acessar [localhost:8080](https://localhost:8080).
 
+Credenciais de Administrador padão:
+    name => Admin Admin
+    email => admin@fronteiratec.com
+    password => admin
+
 Para acessar o container execute: `make enter-php`
 
 #### Frontend:
