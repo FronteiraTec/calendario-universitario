@@ -1,10 +1,11 @@
 FROM php:7.2-fpm
 
-# Copy composer.lock and composer.json
-COPY ./backend/composer.json /var/www/
 
-# Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/app
+
+RUN mkdir app
+
+COPY ./backend/composer.json /var/www/app
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -33,14 +34,11 @@ RUN docker-php-ext-install gd
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
-
-# Copy existing application directory contents
-COPY ./backend /var/www
+RUN groupadd -g 1001 www
+RUN useradd -u 1001 -ms /bin/bash -g www www
 
 # Copy existing application directory permissions
-COPY --chown=www:www ./backend /var/www
+COPY --chown=www:www ./backend /var/www/app
 
 # Change current user to www
 USER www

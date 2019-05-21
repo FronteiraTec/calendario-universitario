@@ -1,7 +1,7 @@
 install:
 	docker-compose build
-	docker-compose run uffs-calendar-php composer install
 	docker-compose run uffs-calendar-php cp .env.example .env
+	docker-compose run uffs-calendar-php composer install
 	docker-compose run uffs-calendar-php php artisan key:generate
 	docker-compose run uffs-calendar-php php artisan migrate
 	docker-compose run uffs-calendar-php php artisan db:seed
