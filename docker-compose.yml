@@ -7,11 +7,13 @@ services:
     build:
       context: .
       dockerfile: php.dockerfile
-    working_dir: /var/www/app
+      args:
+        UID: ${U_ID}
+        GID: ${G_ID}
     links:
       - uffs-calendar-database
     volumes:
-      - ./backend/:/var/www/app
+      - ./backend/:/var/www/html
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=uffs-calendar-database"
@@ -26,9 +28,8 @@ services:
     build:
       context: ./
       dockerfile: web.dockerfile
-    working_dir: /var/www/app
     volumes:
-      - ./backend:/var/www/app
+      - ./backend:/var/www/html
     ports:
       - 8080:80
 
