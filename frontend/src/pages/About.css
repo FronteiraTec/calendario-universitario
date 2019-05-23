@@ -1,3 +1,17 @@
 .About {
-  padding: .75rem;
+  padding-left: .80rem;
+  padding-right: .80rem;
+  padding-bottom: .80rem;
+
+  margin: .80rem;
+}
+
+h2 {
+    margin-top: .50rem;
+}
+
+.FronteiraInfo {
+    text-align: justify;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    /* font-family: @font-face; */
 }
