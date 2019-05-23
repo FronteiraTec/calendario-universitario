@@ -67,10 +67,10 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User  $user)
     {
-        $user->update(
-            $request->merge(['password' => Hash::make($request->get('password'))])
-                ->except([$request->get('password') ? '' : 'password']
-        ));
+        $actualPassword = $request->password;
+        $data = $request->merge(['password' => Hash::make($request->get('password'))])
+            ->except([$actualPassword ? '' : 'password']);
+        $user->update($data);
 
         return redirect()->route('user.index')->withStatus('Usuário atualizado com sucesso.');
     }
