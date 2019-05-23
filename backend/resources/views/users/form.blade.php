@@ -141,6 +141,7 @@
 <h6 class="heading-small text-muted mb-4">Segurança</h6>
 <div class="pl-lg-4">
     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+    <p class="alert alert-default">Para manter a mesma senha basta deixar os campos em branco.</p>
         <label class="form-control-label" for="input-password">Senha</label>
         <input
             type="password"
@@ -161,6 +162,7 @@
         <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="Confirmar senha" value="">
     </div>
     <p>Essa senha deve ser redefinida pelo usuário</p>
+    
 
     <div class="text-center">
         <button type="submit" class="btn btn-success mt-4">Salvar</button>
