@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './About.css'
 
 const About = () => (
@@ -10,20 +9,33 @@ const About = () => (
         <p>
             FronteiraTec é uma empresa júnior do curso de Ciência da Computação
             da Universidade Federal Da Fronteira Sul. Ela é constituída
-            essencialmente por professores e estudantes do curso. Seu objetivo principal
-            é encorajar as idéias empreendedoras que surgem entre os alunos e torná-las realidade.
+            essencialmente por professores e estudantes do curso. Seu objetivo
+			principal é encorajar as idéias empreendedoras que surgem entre os
+			alunos e torná-las realidade. Atualmente a empresa conta com três
+			células (Jogos, Web, Mobile) especializadas no desenvolvido de soluções
+			baseadas em software.
         </p>
 
         <h3>Calendário UFFS</h3>
         <p>
-            O projeto Calendário UFFS objetiva tornar prático o acesso ao
+			O projeto Calendário UFFS objetiva tornar prático o acesso ao
             Cardápio do RU e aos eventos que ocasionalmente ocorrem no meio
-            acadêmico da UFFS Campus Chapecó. Ele foi desenvolvido pela célula Web
-            da FronteiraTec. O projeto atualmente é de código aberto... 
+            acadêmico da UFFS Campus Chapecó. Calendário UFFS é um projeto de
+			código aberto que atualmente encontra-se hospedado na
+			plataforma <a href="https://github.com/FronteiraTec/calendario-uffs" style={{fontSize: 15, color: "#0366d6"}}>GitHub</a>.
+			A iniciativa de tornar a aplicação <i>Open Source</i> foi pelo fato de
+			que isso é uma prática comum na área de tecnologia o que consequentemente
+			proporciona maior visibilidade ao que está sendo desenvolvido pela empresa
+			e também possibilita contribuições futuras.
         </p>
     </div>
-    <img width="50px" src="https://avatars3.githubusercontent.com/u/4642782?s=400&v=4"/>
-    <i style={{fontSize: 50}} className="fab fa-github"></i>
+		<a href="http://fronteiratec.com/" style={{fontSize: 15, color: "#0366d6"}}>FronteiraTec Inc.</a>
+		<a href = "https://github.com/FronteiraTec/calendario-uffs" style={{float:"right"}}>
+			<i style={{fontSize: 30, color: "black", marginLeft: ".7rem"}} className="fab fa-github"></i>
+		</a>
+		<a href = "http://fronteiratec.com/" style={{float:"right"}}>
+			<img style={{width: 120, height: 30}} src={process.env.PUBLIC_URL + '/logo_completo_fronteira.png'}/>
+		</a>
   </div>
 )
 

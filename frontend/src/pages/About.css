@@ -2,7 +2,6 @@
   padding-left: .80rem;
   padding-right: .80rem;
   padding-bottom: .80rem;
-
   margin: .80rem;
 }
 
@@ -11,7 +10,17 @@ h2 {
 }
 
 .FronteiraInfo {
+	padding-bottom: .25rem;
     text-align: justify;
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    /* font-family: @font-face; */
+	line-height: 1.5em;
+	/* height: 80vh; */
+}
+
+footer {
+	background-color: #eee;
+}
+
+a {
+	text-decoration: none;
 }
