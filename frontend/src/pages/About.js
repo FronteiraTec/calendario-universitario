@@ -12,21 +12,22 @@ const About = () => (
             essencialmente por professores e estudantes do curso. Seu objetivo
 			principal é encorajar as idéias empreendedoras que surgem entre os
 			alunos e torná-las realidade. Atualmente a empresa conta com três
-			células (Jogos, Web, Mobile) especializadas no desenvolvido de soluções
-			baseadas em software.
+			células de desenvolvimento (Jogos, Web, Mobile) especializadas na
+            implementação de soluções baseadas em software.
         </p>
 
         <h3>Calendário UFFS</h3>
         <p>
 			O projeto Calendário UFFS objetiva tornar prático o acesso ao
             Cardápio do RU e aos eventos que ocasionalmente ocorrem no meio
-            acadêmico da UFFS Campus Chapecó. Calendário UFFS é um projeto de
+            acadêmico da UFFS Campus Chapecó. Calendário UFFS é uma aplicação de
 			código aberto que atualmente encontra-se hospedado na
-			plataforma <a href="https://github.com/FronteiraTec/calendario-uffs" style={{fontSize: 15, color: "#0366d6"}}>GitHub</a>.
-			A iniciativa de tornar a aplicação <i>Open Source</i> foi pelo fato de
-			que isso é uma prática comum na área de tecnologia o que consequentemente
-			proporciona maior visibilidade ao que está sendo desenvolvido pela empresa
-			e também possibilita contribuições futuras.
+			plataforma <a href="https://github.com/FronteiraTec/calendario-uffs"
+            style={{fontSize: 15, color: "#0366d6"}}>GitHub</a>. A intenção de tornar
+            a aplicação <i>Open Source</i> é de grande importância pois dessa maneira
+            qualquer desenvolvedor é capaz de contribuir com alguma idéia para o melhoramento
+            do projeto, o que reflete diretamente a comunidade acadêmica que dispõe
+            desse recurso.
         </p>
     </div>
 		<a href="http://fronteiratec.com/" style={{fontSize: 15, color: "#0366d6"}}>FronteiraTec Inc.</a>
