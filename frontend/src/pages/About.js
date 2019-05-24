@@ -10,19 +10,19 @@ const About = () => (
             FronteiraTec é uma empresa júnior do curso de Ciência da Computação
             da Universidade Federal Da Fronteira Sul. Ela é constituída
             essencialmente por professores e estudantes do curso. Seu objetivo
-			principal é encorajar as idéias empreendedoras que surgem entre os
-			alunos e torná-las realidade. Atualmente a empresa conta com três
-			células de desenvolvimento (Jogos, Web, Mobile) especializadas na
+            principal é encorajar as idéias empreendedoras que surgem entre os
+            alunos e torná-las realidade. Atualmente a empresa conta com três
+            células de desenvolvimento (Jogos, Web, Mobile) especializadas na
             implementação de soluções baseadas em software.
         </p>
 
         <h3>Calendário UFFS</h3>
         <p>
-			O projeto Calendário UFFS objetiva tornar prático o acesso ao
+            O projeto Calendário UFFS objetiva tornar prático o acesso ao
             Cardápio do RU e aos eventos que ocasionalmente ocorrem no meio
             acadêmico da UFFS Campus Chapecó. Calendário UFFS é uma aplicação de
-			código aberto que atualmente encontra-se hospedado na
-			plataforma <a href="https://github.com/FronteiraTec/calendario-uffs"
+            código aberto que atualmente encontra-se hospedado na
+            plataforma <a href="https://github.com/FronteiraTec/calendario-uffs"
             style={{fontSize: 15, color: "#0366d6"}}>GitHub</a>. A intenção de tornar
             a aplicação <i>Open Source</i> é de grande importância pois dessa maneira
             qualquer desenvolvedor é capaz de contribuir com alguma idéia para o melhoramento
