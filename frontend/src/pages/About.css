@@ -1,3 +1,31 @@
 .About {
-  padding: .75rem;
+    padding-left: .80rem;
+    padding-right: .80rem;
+    padding-bottom: .80rem;
+    margin: .80rem;
+    line-height: 1.5em;
+}
+
+.About__text-link {
+    text-decoration: none;
+    color: #0366d6;
+}
+
+.About__icon-link {
+    text-align: center;
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.About__icon-link--github {
+    vertical-align: middle;
+    color: black;
+    font-size: 2rem;
+}
+
+.About__icon-link--fronteira {
+    vertical-align: middle;
+    width : 9rem;
+    height: 2rem;
+    margin-left: 1rem;
 }
