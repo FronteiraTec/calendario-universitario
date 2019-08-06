@@ -1,4 +1,4 @@
-# Calendário UFFS
+# Calendário Universitário
 
 ## Sobre
 Esse é um projeto desenvolvido pela [FronteiraTec]([http://fronteiratec.com/) com a finalizade de ajudar os estudantes da UFFS a visualizar os eventos da universidade e os cardários do RU.
@@ -52,7 +52,7 @@ Para acessar o container execute: `make enter-node`
 #### Banco de Dados:
 Caso queira acessar o banco de dados com algúm software utilize as credênciais:
   - Porta: 33061
-  - Banco de dados: uffscalendar
+  - Banco de dados: ucalendar
   - Usuário: root
   - Senha: root
 
@@ -64,10 +64,10 @@ Caso você não se sinta confortável em utilizar Docker você pode rodar as apl
 
 ## Contribuir
 Toda ajuda é bem vinda então se você:
-  - encontrou algum bug: Por favor crie uma [issue](https://github.com/FronteiraTec/calendario-uffs/issues) sobre ele.
-  - Tem alguma ideia para o projeto: Crie uma [issue](https://github.com/FronteiraTec/calendario-uffs/issues) com sua ideia ;)
+  - encontrou algum bug: Por favor crie uma [issue](https://github.com/FronteiraTec/calendario-universitario/issues) sobre ele.
+  - Tem alguma ideia para o projeto: Crie uma [issue](https://github.com/FronteiraTec/calendario-universitario/issues) com sua ideia ;)
   - Desenvolveu, corrigiu, implementou algo no projeto: Não tenha medo, crie um Pull Request :)
-  - Gostaria de ajudar com o desenvolvimento: confira as [issues](https://github.com/FronteiraTec/calendario-uffs/issues) do projeto, caso tenha alguma que você acredite que possa ser útil comente lá e iremos lhe dar orientações sobre como dar sequência.
+  - Gostaria de ajudar com o desenvolvimento: confira as [issues](https://github.com/FronteiraTec/calendario-universitario/issues) do projeto, caso tenha alguma que você acredite que possa ser útil comente lá e iremos lhe dar orientações sobre como dar sequência.
   - Além disso você pode apoiar o projeto:
     - Divulgando ele para seus amigos
     - Melhorando a sua documentação

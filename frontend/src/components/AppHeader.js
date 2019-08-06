@@ -14,7 +14,7 @@ class AppHeader extends Component {
           >
             <i className="fa fa-bars"></i>
           </button>
-          <h1 className="AppHeader__app-name">Calendário UFFS</h1>
+          <h1 className="AppHeader__app-name">Calendário Universitário</h1>
         </header>
       </div>
     )

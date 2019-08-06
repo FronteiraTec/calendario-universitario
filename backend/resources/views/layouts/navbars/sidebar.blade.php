@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            Calendário UFFS
+            Calendário Universitário
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">

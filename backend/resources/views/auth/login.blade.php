@@ -6,7 +6,7 @@
             <div class="header-body text-center mb-4">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">Área restrita Calendário UFFS</h1>
+                        <h1 class="text-white">Área restrita Calendário Universitário</h1>
                     </div>
                 </div>
             </div>

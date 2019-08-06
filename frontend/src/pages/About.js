@@ -20,15 +20,15 @@ const About = () => (
             implementação de soluções baseadas em software.
         </p>
 
-        <h3> Calendário UFFS </h3>
+        <h3> Calendário Universitário </h3>
 
         <p>
-            O projeto Calendário UFFS objetiva tornar prático o acesso ao
+            O projeto Calendário Universitário objetiva tornar prático o acesso ao
             Cardápio do RU e aos eventos que ocasionalmente ocorrem no meio
-            acadêmico da UFFS Campus Chapecó. Calendário UFFS é uma aplicação de
+            acadêmico da UFFS Campus Chapecó. Calendário Universitário é uma aplicação de
             código aberto que atualmente encontra-se hospedado na
             plataforma <a className = "About__text-link" target="_blank"
-            href=" https://github.com/FronteiraTec/calendario-uffs">GitHub</a>.
+            href=" https://github.com/FronteiraTec/calendario-universitario">GitHub</a>.
             A intenção de tornar a aplicação <i>Open Source</i> é de grande
             importância pois dessa maneira qualquer desenvolvedor é capaz de
             contribuir com alguma ideia para o melhoramento do projeto, o que
@@ -41,7 +41,7 @@ const About = () => (
 
         <div className = "About__icon-link">
 
-            <a target="_blank" href = "https://github.com/FronteiraTec/calendario-uffs">
+            <a target="_blank" href = "https://github.com/FronteiraTec/calendario-universitario">
                 <i className = "fab fa-github About__icon-link--github"></i>
             </a>
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.headers.title-header' , ["title" => "Calendário UFFS"])
+    @include('layouts.headers.title-header' , ["title" => "Calendário Universitário"])
 
     <div class="container-fluid mt--7">
         <div class="row mt-7">

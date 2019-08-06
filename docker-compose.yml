@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
 
-  uffs-calendar-php:
-    container_name: uffs-calendar-php
+  ucalendar-php:
+    container_name: ucalendar-php
     build:
       context: .
       dockerfile: docker/php.dockerfile
@@ -11,20 +11,20 @@ services:
         UID: ${U_ID}
         GID: ${G_ID}
     links:
-      - uffs-calendar-database
+      - ucalendar-database
     volumes:
       - ./backend/:/var/www/html
     environment:
       - "DB_PORT=3306"
-      - "DB_HOST=uffs-calendar-database"
-      - "DB_DATABASE=uffscalendar"
+      - "DB_HOST=ucalendar-database"
+      - "DB_DATABASE=ucalendar"
       - "DB_USERNAME=root"
       - "DB_PASSWORD=root"
 
-  uffs-calendar-web:
-    container_name: uffs-calendar-web
+  ucalendar-web:
+    container_name: ucalendar-web
     depends_on:
-      - uffs-calendar-php
+      - ucalendar-php
     build:
       context: ./
       dockerfile: docker/web.dockerfile
@@ -33,21 +33,21 @@ services:
     ports:
       - 8080:80
 
-  uffs-calendar-database:
-    container_name: uffs-calendar-database
+  ucalendar-database:
+    container_name: ucalendar-database
     image: mysql:5.7
     volumes:
-      - dbdata:/var/lib/mysql
+      - ucalendar-dbdata:/var/lib/mysql
     environment:
-      - "MYSQL_DATABASE=uffscalendar"
+      - "MYSQL_DATABASE=ucalendar"
       - "MYSQL_USER=root"
       - "MYSQL_PASSWORD=root"
       - "MYSQL_ROOT_PASSWORD=root"
     ports:
         - "33061:3306"
 
-  uffs-calendar-node:
-    container_name: uffs-calendar-node
+  ucalendar-node:
+    container_name: ucalendar-node
     volumes:
       - ./frontend:/usr/src/app
     command: npm start
@@ -56,10 +56,10 @@ services:
       NODE_ENV: development
     build:
       context: .
-      dockerfile: docker/"node.dockerfile"
+      dockerfile: docker/node.dockerfile
     ports:
       - "3000:3000"
     restart: always
 
 volumes:
-  dbdata:
+  ucalendar-dbdata:

@@ -20,7 +20,7 @@ const AppMenu = (props) => (
       onSwipeMove={handleSwipeMove(props.handleCloseMenu)}
     >
       <div className="AppMenu__content">
-        <h3 className="AppMenu__title">Calendário UFFS</h3>
+        <h3 className="AppMenu__title">Calendário Universitário</h3>
         <nav className="AppMenu__list">
           <NavLink
             to={"/"}
