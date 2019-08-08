@@ -1,7 +1,7 @@
 # Calendário Universitário
 
 ## Sobre
-Esse é um projeto desenvolvido pela [FronteiraTec]([http://fronteiratec.com/) com a finalizade de ajudar os estudantes da UFFS a visualizar os eventos da universidade e os cardários do RU.
+Esse é um projeto desenvolvido pela [FronteiraTec]([http://fronteiratec.com/) com a finalizade de ajudar os estudantes da UFFS a visualizar os eventos da universidade e os cardápios do RU.
 
 ## Setup
 O projeto possui configuração de imagens e containers em [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) e [docker-compose](https://docs.docker.com/compose/install/), então tenha certeza de os ter em seu computador.
@@ -11,7 +11,7 @@ Para isso você poder utilizar o link da [documentação oficial](https://docs.d
 
 
 ### Makefile
-Se você estiver em um sistema baseado em Unix você pode utilizar o Makefile já configurado para esse sistema, para isso basta seguir as intruções abaixo.
+Se você estiver em um sistema baseado em Unix você pode utilizar o Makefile já configurado para esse sistema, para isso basta seguir as instruções abaixo.
 
 ```bash
 # Instala o projeto, isso pode demorar de 8 a 15 minutos, deve ser o primeiro comando a ser executado assim que o projeto for clonado.
@@ -45,12 +45,12 @@ Por padrão irá rodar na porta 3000, ou seja, em seu computador basta acessar [
 
 Existe um arquivo com configurações básicas no dir: `frontend/src/config.js`.
 
-Caso você queira acessar a aplicação em outros computadores apartir do seu IP será necessário configurar a váriavel `API_ADDRESS` no arquivo de configuração.
+Caso você queira acessar a aplicação em outros computadores apartir do seu IP será necessário configurar a variável `API_ADDRESS` no arquivo de configuração.
 
 Para acessar o container execute: `make enter-node`
 
 #### Banco de Dados:
-Caso queira acessar o banco de dados com algúm software utilize as credênciais:
+Caso queira acessar o banco de dados com algum software utilize as credênciais:
   - Porta: 33061
   - Banco de dados: ucalendar
   - Usuário: root
@@ -59,7 +59,7 @@ Caso queira acessar o banco de dados com algúm software utilize as credênciais
 Para acessar o container execute: `make enter-database`.
 
 ### Alternativa
-Caso você não se sinta confortável em utilizar Docker você pode rodar as aplicações individualmente seguindo as orientações de applicativos React na pasta frontend e Laravel na pasta backend.
+Caso você não se sinta confortável em utilizar Docker você pode rodar as aplicações individualmente seguindo as orientações de aplicativos React na pasta frontend e Laravel na pasta backend.
 
 
 ## Contribuir
